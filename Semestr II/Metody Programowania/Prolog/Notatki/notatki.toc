@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Wst\IeC {\k e}p do Prologa}{3}
+\contentsline {subsection}{\numberline {1.1}Kompilowanie}{3}
+\contentsline {subsection}{\numberline {1.2}Fakty,Zmienne,Koniunkcje}{3}
+\contentsline {subsection}{\numberline {1.3}Regu\IeC {\l }y}{3}
+\contentsline {subsection}{\numberline {1.4}Struktury}{4}
+\contentsline {subsection}{\numberline {1.5}Operatory}{4}

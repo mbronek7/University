@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1487877313 source:/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 1/zad3/main.c
+	<stdio.h>
+	<stdlib.h>
+	"zespolone.h"
+
+1487877313 /home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 1/zad3/zespolone.h
+	<stdio.h>
+	<stdlib.h>
+
+1487877313 source:/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 1/zad3/zespolone.c
+	"zespolone.h"
+	<stdio.h>
+	<stdlib.h>
+
