@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.7)  24 FEB 2017 03:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.7)  24 FEB 2017 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,12 +584,27 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 96--96
 [][][][][][][] 
  []
 
+
+LaTeX Font Warning: Font shape `OT4/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT4/cmtt/m/n' tried instead on input line 103.
+
+
+Overfull \hbox (11.25067pt too wide) in paragraph at lines 103--104
+\OT4/cmr/m/n/10 Lista to struk-tu-ra da-nych, któ-ra jest ci¡-giem upo-rz¡d-ko-
+wa-nych ele-men-tów(dowolne
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 104--104
+[][][][][][][] 
+ []
+
 [5] (./notatki.aux) ) 
 Here is how much of TeX's memory you used:
- 4753 strings out of 493029
- 65506 string characters out of 6136235
+ 4755 strings out of 493029
+ 65533 string characters out of 6136235
  134250 words of memory out of 5000000
- 8256 multiletter control sequences out of 15000+600000
+ 8258 multiletter control sequences out of 15000+600000
  13579 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,6n,42p,296b,1544s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -603,7 +618,7 @@ texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/pl/plr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/pltt10
 .pfb>
-Output written on notatki.pdf (5 pages, 62903 bytes).
+Output written on notatki.pdf (5 pages, 65569 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream

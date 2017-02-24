@@ -1,1 +1,3 @@
-dodaj(X,Y,Z) :-Z is X + Y.
+suma(5).
+suma(3).
+suma(X+Y).

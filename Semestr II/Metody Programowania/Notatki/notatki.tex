@@ -99,4 +99,12 @@ dodaj(X,Y,Z) :-Z is X + Y.
 ?- dodaj(2,3,A).
 A=5.
 \end{lstlisting}
+\subsection{Listy}
+Lista to struktura danych, która jest ciągiem uporządkowanych elementów(dowolne termy). Głowa listy to pierwszy element, ogon to całą reszta. Zapis  \textbf{\url{[X | Y]}} utożsamaia X z głową listy a Y z ogonem.
+\begin{lstlisting}[caption=Utożsamianie głowy i ogona]
+a([1,2,3]).
+~~~~~~~~~~~~~~
+?- p([X | Y]).
+X=1  Y=[2,3].
+\end{lstlisting}
 \end{document}
