@@ -5,3 +5,4 @@
 \contentsline {subsection}{\numberline {1.4}Struktury}{4}
 \contentsline {subsection}{\numberline {1.5}Operatory}{4}
 \contentsline {subsection}{\numberline {1.6}Listy}{5}
+\contentsline {subsection}{\numberline {1.7}Przeszukiwanie rekurencyjne}{5}

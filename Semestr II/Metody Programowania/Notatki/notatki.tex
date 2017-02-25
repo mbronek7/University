@@ -107,4 +107,17 @@ a([1,2,3]).
 ?- p([X | Y]).
 X=1  Y=[2,3].
 \end{lstlisting}
+\subsection{Przeszukiwanie rekurencyjne}
+Sprawdzmy czy jakis obiekt X jest członkiem listy Y.
+Sprawdzamy dwa warunki:
+\begin{itemize}
+\item X jest elementem Y, gdy jest jego głową
+\item X jest elementem Y, gdy X nalezy do ogana tej listy
+\end{itemize}
+\begin{lstlisting}[caption=Rekurencja]
+member(X,[X,_]). /*X nalezy jesli jest glowa*/
+member(X,[_ | Y]) :- member(X,Y)./*X nalezy jesli jest w ogonie*/
+\end{lstlisting}
+Drugi warunek za każdym razem wywołuje krótszą listę. Więc albo uruchomiona zostanie pierwsza klauzula member albo
+jako drugi argument zostanie przekazana lista długości 0. Sa to warunki graniczne kończące wywoływanie celów member.
 \end{document}
