@@ -1,8 +1,8 @@
-kot(my_cat).
-ryba(_) :- fail.  /*predykat fail  zawsze zawodzi i powoduje nawracanie*/
+/*kot(my_cat).
+ryba(_) :- fail.  //predykat fail  zawsze zawodzi i powoduje nawracanie
 ptak(_) :- fail.
 dzdzownica(_) :- fail.
-przyjaciele(me,my_cat).
+przyjaciele(me,my_cat).*/
 lubi(X,Y) :- przyjaciele(X,Y).
 lubi(X,Y) :- przyjaciele(Y,X).
 lubi(X,Y) :- kot(X),ryba(Y).
