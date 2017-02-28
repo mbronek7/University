@@ -9,45 +9,45 @@ wezel * init( wezel *korzen)
     korzen = NULL;
     return korzen;
 }
-void wstaw(wezel ** drzewo, int val)
+void wstaw(wezel ** drzewo, struct str val)
 {
     wezel *kopia = NULL;
     if(!(*drzewo))
     {
         kopia = (wezel *)malloc(sizeof(wezel));
         kopia->lewy = kopia->prawy = NULL;
-        kopia->data.val = val;
+        kopia->data.val = val.val;
         *drzewo = kopia;
         return;
     }
 
-    if(val < (*drzewo)->data.val)
+    if(val.val < (*drzewo)->data.val)
     {
         wstaw(&(*drzewo)->lewy, val);
     }
-    else if(val > (*drzewo)->data.val)
+    else if(val.val > (*drzewo)->data.val)
     {
         wstaw(&(*drzewo)->prawy, val);
     }
 
 }
 
-wezel* szukaj(wezel ** drzewo, int val)
+wezel* szukaj(wezel ** drzewo, struct str val)
 {
     if(!(*drzewo))
     {
         return NULL;
     }
 
-    if(val < (*drzewo)->data.val)
+    if(val.val < (*drzewo)->data.val)
     {
         szukaj(&((*drzewo)->lewy), val);
     }
-    else if(val > (*drzewo)->data.val)
+    else if(val.val > (*drzewo)->data.val)
     {
         szukaj(&((*drzewo)->prawy), val);
     }
-    else if(val == (*drzewo)->data.val)
+    else if(val.val == (*drzewo)->data.val)
     {
         return *drzewo;
     }

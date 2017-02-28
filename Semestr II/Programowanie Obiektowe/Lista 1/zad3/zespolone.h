@@ -16,6 +16,6 @@ void DodajzWskaznik(Zespolona A, Zespolona *B);
 void OdejmijzWskaznik(Zespolona A, Zespolona *B);
 void PomnozzWskaznik(Zespolona A, Zespolona *B);
 void PodzielzWskaznik(Zespolona A, Zespolona *B);
-
+void przyklad();
 Zespolona Nowa();
 void Wypisz(Zespolona A);

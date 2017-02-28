@@ -14,7 +14,7 @@ struct DrzewoBinarne
 };
 typedef struct DrzewoBinarne wezel;
 wezel * init( wezel *korzen);
-void wstaw(wezel ** drzewo, int val);
-wezel* szukaj(wezel ** drzewo, int val);
+void wstaw(wezel ** drzewo, struct str val);
+wezel* szukaj(wezel ** drzewo, struct str val);
 int  rozmiar(wezel * drzewo);
 void przyklad();

@@ -4,10 +4,6 @@
 #include "zespolone.h"
 int main()
 {
-    Zespolona B,A,C;
-    B=Nowa();
-    A=Nowa();
-    OdejmijzWskaznik(A,&B);
-    Wypisz(B);
+    przyklad();
     return 0;
 }

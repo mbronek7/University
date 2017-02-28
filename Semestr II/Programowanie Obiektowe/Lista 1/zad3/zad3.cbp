@@ -34,6 +34,9 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="przyklad.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="zespolone.c">
 			<Option compilerVar="CC" />
 		</Unit>
