@@ -1,0 +1,59 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\author{Michał Bronikowski}
+\title{Rozwiązania wybranych zadań z I listy}
+\begin{document}
+\maketitle
+\newpage
+\section{\normalsize{Jaką rolę w systemie rozproszonym odgrywa oprogramowanie warstwy środkowej?}}
+Główną rolą warstwy środkowej jest zapewnienie przezroczystości całemu systemowi to znaczy, że
+to oprogramowanie uczestniczy w wymianie informacji pomiędzy wszystkimi jednostkami w naszym systemie rozproszonym.
+Jednocześnie użytkownik nie odczuwa, że decentralizacji działań (przezroczystość). Wszelkie różnice w reprezentacji danych są ukrywane.
+\section{\normalsize{Wyjaśnij, co rozumiemy przez przezroczystość (rozproszenia), i podaj przykłady różnych rodzajów przezroczystości.}}
+Przezroczystośc - inaczej transparentnośc jest cechą systemu rozproszonego, dzięki niej użytkownik ma wrażenie, że korzysta z jednego scentralizowanego i zintegrowanego "komputera".
+\begin{itemize}
+\item {Dostępu}
+\item {Położenia}
+\item {Wędrówki}
+\item {Przemieszczenia}
+\item {Zwielokrotnienia}
+\item {Współbieżnośći}
+\item {Awarii}
+\item {Trwałości}
+\end{itemize}
+\section{\normalsize{Dlaczego czasami tak trudno jest ukryć w systemie rozproszonym występowanie awarii usuwanie ich skutków (rekonstrukcję)?}}
+Jest to spowodowane tym, że awaria może wystąpić w trakcie trwania jakiegoś procesu i nie da się powrócić do stanu sprzed awarii.
+Na przykład weźmy sytem sterujący spuszczaniem wody w wielkich zaporach wodnych (np.Przy elektrowniach wodnych) i wyobraźmy sobie, że awaria nastąpiła podczas spuszczania wody ze zbiornika i zablokowane zostały klapy, które blokują wodę w pozycji otwartej. Po ustąpieniu awarii nie da się usunąć jej skutków, po nie waż nie da się wrócić do stanu sprzed wystąpienia awarii i na przyład całe miasto leżące obok tej elektrowni zostało zalane.
+\section{\normalsize{Dlaczego dążenie do osiągnięcia jak największego stopnia przezroczystości nie zawsze jest dobrym pomysłem?}}
+Wydaje mi się, że nie jest to dobry pomysł, gdy staramy się za wszelką cene osiągnąć przezroczystośc awarii. Jeżeli użytkownik nie będzie zdawał sobie sprawy z uszkodzenia niektórych węzłów a na przykłąd administrator naszego systemu będzie zbyt pewny siebie, może dojść do sytuacji, gdy cały nasz system ulegnie awarii, którą dałoby się uniknąć, gdyby wcześniej ktoś zareagował. Również osiągnięcie pełnej przezroczystości jest bardzo "zasobożerne".
+\section{\normalsize{Co to jest otwarty system rozproszony i jakie korzyści wynikają z otwartości?}}
+Otwarty system rozproszony to inaczej system elastyczny, czyli taki, który można łatwo konfigurowac i rozbudowywać.
+Główną korzyścią tego rodzaju systemów jest redukcja kosztów związana z wymianą poszczególnych podzespołów, ponieważ wymiana jednego węzła nie pociąga za sobą wymiany kolejnych, czyli możemu unowocześniać nasz system "etapowo".
+\section{\normalsize{Opisz dokładnie, co rozumiemy przez system skalowalny.}}
+Skalowalnośc systemu rozproszonego oznacza możliwość dodawania nowych zasobów i użytkowników, rozmieszczenia poszczególnych węzłów w różnych miejscach (np. wyszukiwarka Google na całym świecie), pomimo rozrzucenia i elastyczności węzłów ich administracja jest skuteczna i szybka.
+\section{\normalsize{Skalowalność można osiągnąć różnymi sposobami. Jakie to są sposoby?}} 
+Te sposoby to:
+\begin{itemize}
+\item{zwiększenie odporności na awarie}
+\item{przeżucenie części obliczeń na komputer klienta (rzadkie rozwiązanie i nie zawsze możliwe)}
+\item{Zapewnienie spójności danych}
+\item{komunikacja asynchroniczna - zmniejsza obciążenie sieci}
+\end{itemize}
+\section{\normalsize{Wieloprocesor z 256 jednostkami centralnymi jest zorganizowany w układzie kraty o wymiarach 16 na 16. Ile wynosi najgorsze opóźnienie (w przeskokach), na jakie jest narażony komunikat}}
+Najgorsze opóźnienie w tym przypadku to: 31.
+\section{\normalsize{Na czym polega różnica między rozproszonym systemem operacyjnym a sieciowym systemem operacyjnym?}}
+W sieciowym systemie operacyjnym nie ma przezroczystości na przykład odczywamy, że pliki nie są bezpośrednio na naszym komputerze.
+\section{\normalsize{Powiedzieliśmy, że w przypadku zaniechania transakcji świat powraca do poprzedniego stanu, tak jak gdyby transakcja nigdy nie wystąpiła. Kłamaliśmy. Podaj przykład, w którym odtworzenie poprzedniego stanu świata jest niemożliwe.}}
+Przykład z elektrownią z zadania 3, albo podany przez Pana przykład z drukarką, gdy awaria nastąpi w trakcie drukowania strony i nie da się wrócić do stanu sprzed awarii, ponieważ część kartki jest już zadrukowana.
+\section{\normalsize{Utrzymywaliśmy, że przezroczystość rozproszenia może nie występować w systemach wszechobecnych (ang. pervasive systems). Nie odnosi się to do wszystkich rodzajów przezroczystości. Podaj przykład.}}
+Dobrym przykładem według mnie jest trwałośc, ponieważ w systemach wszechobecnych dba się o ukrywanie urządzeń i sposobów służących do zapisu danych
+\section{\normalsize{Omówiliśmy kilka przykładów wszechobecnych systemów rozproszonych. Były to systemy domowe, doglądania zdrowia indywidualnego pacjenta i sieci sensorowe. Rozszerz tę listę o więcej przykładów.}}
+\begin{itemize}
+\item{Systemy badające natężenie ruchu na autostradach}
+\item{Systemy mnierzące zanieczyszczenie powietrza w mieście}
+\item{Systemy służące do pomiarów meteorologicznych}
+\item{Sygnalizacja świetlna}
+\end{itemize}
+\end{document}
