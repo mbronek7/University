@@ -8,18 +8,18 @@ matrix matrix::zero( )
 
 matrix matrix::identity( )
 {
-   return matrix( { { 1, 0 }, { 0, 1 } } ); 
+   return matrix( { { 1, 0 }, { 0, 1 } } );
 }
 
 
 matrix matrix::diagonal( const vector& v )
 {
-   return matrix( { { v.x, 0 }, { 0, v.y } } ); 
+   return matrix( { { v.x, 0 }, { 0, v.y } } );
 }
 
 rational matrix::determinant( ) const
 {
-   return repr [0][0] * repr [1][1] - repr [1][0] * repr [0][1]; 
+   return repr [0][0] * repr [1][1] - repr [1][0] * repr [0][1];
 }
 
 vector matrix::operator( ) ( const vector& v ) const
@@ -30,15 +30,15 @@ vector matrix::operator( ) ( const vector& v ) const
 
 matrix matrix::adjugate( ) const
 {
-   return matrix( { { repr[1][1], -repr[1][0] }, 
+   return matrix( { { repr[1][1], -repr[1][0] },
                     { -repr[0][1], repr[0][0] } } );
 }
 
-matrix matrix::inverse( ) const 
+matrix matrix::inverse( ) const
 {
    rational r = determinant( );
-   if( r. num == 0 ) 
-      throw std::runtime_error( "inverted matrix is singular" ); 
+   if( r. num == 0 )
+      throw std::runtime_error( "inverted matrix is singular" );
    return adjugate( ) / r;
 }
 
@@ -88,13 +88,13 @@ void operator *= ( matrix& m, const rational& r )
 
 matrix operator * ( const matrix& m1, const matrix& m2 )
 {
-   return matrix( 
+   return matrix(
       vector( m1. repr [0][0] * m2. repr [0][0] +
-              m1. repr [0][1] * m2. repr [1][0], 
+              m1. repr [0][1] * m2. repr [1][0],
               m1. repr [1][0] * m2. repr [0][0] +
               m1. repr [1][1] * m2. repr [1][0] ),
       vector( m1. repr [0][0] * m2. repr [0][1] +
-              m1. repr [0][1] * m2. repr [1][1], 
+              m1. repr [0][1] * m2. repr [1][1],
               m1. repr [1][0] * m2. repr [0][1] +
               m1. repr [1][1] * m2. repr [1][1] ));
 }
@@ -103,7 +103,7 @@ matrix operator * ( const matrix& m1, const matrix& m2 )
 matrix operator / ( const matrix& m, const rational& r )
 {
    return matrix( { { m. repr[0][0] / r, m. repr[1][0] / r },
-                    { m. repr[0][1] / r, m. repr[1][1] / r } } ); 
+                    { m. repr[0][1] / r, m. repr[1][1] / r } } );
 }
 
 void operator /= ( matrix& m, const rational& r )
@@ -111,13 +111,13 @@ void operator /= ( matrix& m, const rational& r )
    m. repr[0][0] = m. repr[0][0] / r;
    m. repr[1][0] = m. repr[1][0] / r;
    m. repr[0][1] = m. repr[0][1] / r;
-   m. repr[1][1] = m. repr[1][1] / r; 
+   m. repr[1][1] = m. repr[1][1] / r;
 }
 
 
 std::ostream& operator << ( std::ostream& out, const matrix& m )
 {
    out << "|| " << m. repr[0][0] << ",     " << m. repr[0][1] << " ||\n";
-   out << "|| " << m. repr[1][0] << ",     " << m. repr[1][1] << " ||\n"; 
-   return out; 
+   out << "|| " << m. repr[1][0] << ",     " << m. repr[1][1] << " ||\n";
+   return out;
 }
