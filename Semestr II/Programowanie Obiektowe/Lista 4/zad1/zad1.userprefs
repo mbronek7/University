@@ -1,6 +1,10 @@
-﻿<Properties StartupItem="zad2/zad2.csproj">
+﻿<Properties StartupItem="zad1/zad1.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="zad1/Program.cs">
+    <Files>
+      <File FileName="zad1/Program.cs" Line="11" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

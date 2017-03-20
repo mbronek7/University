@@ -19,7 +19,7 @@ void stack::ensure_capacity( size_t c )
     }
 }
 
-  stack::stack( std::initializer_list<double> d )
+  stack::stack( std::initializer_list<double> d ): current_size{0}, current_capacity{d.size()},tab{new double[d.size()]} 
   {
 
       ensure_capacity( d.size() );

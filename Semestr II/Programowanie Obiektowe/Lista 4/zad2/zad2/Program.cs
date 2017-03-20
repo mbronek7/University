@@ -3,62 +3,95 @@ using System.Collections;
 
 namespace zad2
 {
-	public class Primes : IEnumerator
+	public class PrimeCollection : IEnumerator// interfejs Obsługuje proste iteracji w kolekcji-uniwersalne.
 	{
-		private int counter;
+		protected int Current;
 
-		private bool primeCheck(int n)
+		private bool IsPrime(int number)
 		{
-			if (n < 2) return false;
-
-			for (int i = 2; i < n - 1; i++)
+			if (number < 2) 
+				return false;
+			if (number == 2)
+				return true;
+			for (int i = 3; i < Math.Sqrt(number + 1); ++i)
 			{
+				if (number % i == 0) 
+					return false;
 			}
 
 			return true;
 		}
-
-		public Primes ()
+		public bool MoveNext()
 		{
-			counter = 1;
+			Current++;
+			while (IsPrime(Current) == false) 
+				Current++;
+			if (Current == Int32.MaxValue)
+				return false;
+			return true;
+		
 		}
 
-		public bool MoveNext ()
+		public PrimeCollection()
 		{
-			counter++;
-			while (!primeCheck(counter)) counter++;
-			return counter < int.MaxValue;
+			Current = 0;
 		}
 
-		public void Reset ()
-		{
-			counter = 1;
-		}
-
-		public object Current
+		object IEnumerator.Current
 		{
 			get 
 			{
-				return counter;
+				return Current;
 			}
 		}
-	}
 
-
-	class PrimeCollection : IEnumerable
-	{
+		public void Reset()
+		{
+			Current = 0;
+		}
+			
 		public IEnumerator GetEnumerator()
 		{
-			return new Primes();
+			return new PrimeCollection();
 		}
 	}
+
 	class MainClass
 	{
 		public static void Main (string[] args)
 		{
 			PrimeCollection pc = new PrimeCollection();
 			foreach(int p in pc)
-				System.Console.WriteLine(p);
+				Console.WriteLine(p);
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
