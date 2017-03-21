@@ -1,13 +1,12 @@
 ﻿using System;
 
-
-
-public class List
+public class List<T>
 {
-	public class wezel
+	private class wezel
 	{
 		public wezel Nast;
-		public object Value;
+		public wezel Poprz;
+		public T Value;
 	}
 	private wezel glowa;
 	private wezel AktualnyWezel;
@@ -21,19 +20,21 @@ public class List
 	}
 
 
-	public void DodajNaKoniec(object info)
+	public void DodajNaKoniec(T info)
 	{
 		wezel newwezel = new wezel();
 		newwezel.Value = info;
 		AktualnyWezel.Nast = newwezel;
+		newwezel.Poprz = AktualnyWezel;
 		AktualnyWezel = newwezel;
 		IloscElementowWLiscie++;
 	}
 
-	public void DodajNaPoczatku(object info)
+	public void DodajNaPoczatku(T info)
 	{
 		wezel newwezel = new wezel() { Value = info};
 		newwezel.Nast = glowa.Nast;
+		glowa.Nast.Poprz = newwezel;
 		glowa.Nast = newwezel;
 		IloscElementowWLiscie++;
 	}
@@ -43,6 +44,7 @@ public class List
 		if (IloscElementowWLiscie > 0)
 		{
 			glowa.Nast = glowa.Nast.Nast;
+			glowa.Nast.Poprz = glowa;
 			IloscElementowWLiscie--;
 		}
 		else
@@ -54,11 +56,10 @@ public class List
 	{
 		if (IloscElementowWLiscie > 0)
 		{
-			wezel teraz = glowa;
-			while (teraz.Nast != AktualnyWezel) {
-				teraz = teraz.Nast;
-			}
-			teraz.Nast = null;
+			AktualnyWezel.Poprz.Nast = null;
+			AktualnyWezel = AktualnyWezel.Poprz;
+			AktualnyWezel.Nast = null;
+			IloscElementowWLiscie--;
 		} 
 		else 
 		{
@@ -90,22 +91,22 @@ class zad1
 {
 	static void Main(string[] args)
 	{           
-		List MojaLista = new List();
+		List<string> MojaLista = new List<string>();
 		if (MojaLista.CzyPusta ())
 			Console.WriteLine ("Lista jest pusta");
 
 		MojaLista.WypiszListe();
 
-		MojaLista.DodajNaKoniec(12);
+		MojaLista.DodajNaKoniec ("12");
 		MojaLista.DodajNaKoniec("cos tam");
-		MojaLista.DodajNaKoniec(12432523);
-		MojaLista.DodajNaKoniec(3.14);
+		MojaLista.DodajNaKoniec ("2432523");
+		MojaLista.DodajNaKoniec ("3.14");
 		MojaLista.WypiszListe();
 
 		if (MojaLista.CzyPusta ())
 			Console.WriteLine ("Lista jest pusta");
 
-		MojaLista.DodajNaPoczatku(55);
+		MojaLista.DodajNaPoczatku("55");
 		MojaLista.WypiszListe();
 
 
@@ -117,3 +118,31 @@ class zad1
 
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

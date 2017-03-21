@@ -19,10 +19,9 @@ void stack::ensure_capacity( size_t c )
     }
 }
 
-  stack::stack( std::initializer_list<double> d ): current_size{0}, current_capacity{d.size()},tab{new double[d.size()]} 
+  stack::stack( std::initializer_list<double> d ): current_size{0}, current_capacity{d.size()},tab{new double[d.size()]}
   {
 
-      ensure_capacity( d.size() );
           for( double i : d  )
           {
             tab[current_size] = i;
@@ -51,20 +50,20 @@ void stack::push( double d )
 
 void stack::pop()
 {
-    if(current_size > 0)
+    //if(current_size > 0)
         current_size--;
-    else
-        throw std::runtime_error("stack is empty");
+    //else
+    //    throw std::runtime_error("stack is empty");
 }
 
 
 void stack::reset( size_t s )
 {
-    while(current_size > s)
-    {
-        pop();
-        current_size--;
-    }
+  //opt
+  if(s<=current_size)
+  current_size = s;
+  else
+  throw std::runtime_error("s is bigger than current_size");
 }
 
 double& stack::top( )

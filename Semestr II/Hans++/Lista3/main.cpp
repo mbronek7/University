@@ -10,9 +10,9 @@ int main()
     for( unsigned int j = 0; j < 20; ++ j )
         s2. push( j * j );
         cout<< s2 <<endl;
-    s1 = s2;
+
 // Assignment.
-    s1 = s1;
+
 // Always check for self assignment.
    s1 = { 100,101,102,103 };
    cout << s1 << "\n";

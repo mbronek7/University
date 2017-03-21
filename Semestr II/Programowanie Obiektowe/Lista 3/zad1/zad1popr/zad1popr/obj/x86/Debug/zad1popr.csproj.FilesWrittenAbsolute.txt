@@ -1,0 +1,5 @@
+/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 3/zad1/zad1popr/zad1popr/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 3/zad1/zad1popr/zad1popr/bin/Debug/zad1popr.exe.mdb
+/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 3/zad1/zad1popr/zad1popr/bin/Debug/zad1popr.exe
+/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 3/zad1/zad1popr/zad1popr/obj/x86/Debug/zad1popr.exe
+/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 3/zad1/zad1popr/zad1popr/obj/x86/Debug/zad1popr.exe.mdb
