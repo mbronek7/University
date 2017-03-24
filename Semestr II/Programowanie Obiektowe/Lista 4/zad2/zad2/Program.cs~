@@ -21,11 +21,11 @@ namespace zad2
 		}
 		public bool MoveNext()
 		{
-			if (Current == Int32.MaxValue)
-				return false;
 			Current++;
 			while (IsPrime(Current) == false) 
 				Current++;
+			if (Current == Int32.MaxValue)
+				return false;
 			return true;
 		
 		}
@@ -48,7 +48,7 @@ namespace zad2
 			Current = 0;
 		}
 			
-		public IEnumerator GetEnumerator()
+		public IEnumerator GetEnumerator()//zwraca modul wyliczajacy do iteracji
 		{
 			return new PrimeCollection();
 		}
