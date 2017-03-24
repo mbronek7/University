@@ -1,0 +1,54 @@
+lengt(X, Y):-
+  lengt(X, Y, 0).
+lengt([], Y, Y).
+lengt([_|T], Y, X):-
+  X \== Y,  % inaczej program sie nawraca i outof global stack
+  C is X+1,
+  lengt(T,Y,C).
+  
+
+%---------------------------------------
+polaczenie(wroclaw,warszawa).
+polaczenie(wroclaw,krakow).
+polaczenie(wroclaw,szczecin).
+polaczenie(szczecin,lublin).
+polaczenie(szczecin,gniezno).
+polaczenie(warszawa,katowice).
+polaczenie(gniezno,gliwice).
+polaczenie(lublin,gliwice).
+
+
+trip(Z_Kad, Dokad, [Z_Kad|Trasa]):-
+  trip(Z_Kad, Dokad, Trasa, [Dokad]).
+
+trip(Z_Kad,Z_Kad,Trasa,Trasa).
+trip(Z_Kad, Dokad, Trasa, Odwiedzone):-
+  polaczenie(Teraz, Dokad),
+  \+ memberchk(Teraz, Odwiedzone), % not provable operator
+  trip(Z_Kad, Teraz, Trasa, [Teraz|Odwiedzone]).
+%--------------------------------------------------
+mirror(leaf, leaf). %stale zapisuje sie malymi literami
+mirror(node(Left, Value, Right), node(MirrorRight, Value, MirrorLeft)):-
+  mirror(Left, MirrorLeft),
+  mirror(Right, MirrorRight).
+
+
+flatten(leaf, []).
+flatten(node(L,E,R),List):-
+  flatten(R,List1),
+  flatten(L,List2),
+  append(List1,[E|List2],List).
+%----------------------------------------------------------
+
+revall(X,Y):-
+  revall(X,[],Y).
+
+revall([],A,A).% baza indukcji
+
+revall([H|T],A,Y):-
+  is_list(H), !,
+  revall(H, R),
+  revall(T,[R|A],Y).
+revall([H|T],A,Y):-
+  revall(T,[H|A],Y).
+
