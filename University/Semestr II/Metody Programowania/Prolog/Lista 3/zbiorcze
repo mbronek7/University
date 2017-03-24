@@ -1,0 +1,80 @@
+Zad 1
+
+perm([],[]). % permutacja listy pustej jest lista pusta
+perm([H|T],X) :-
+  perm(T,Y),
+  select(H,X,Y).
+
+Zad 2
+
+exp(X, Y, Z):-
+  Z is X^Y.
+%-----------------------------------
+
+count(_,[],0).
+count(X, [X|T], N):-
+  count(X,T,C),!,
+  N is C + 1.
+count(X,[_|T],N):-
+  count(X,T,N).
+%-----------------------------------
+filter([],[]).
+filter([H|T],[H|S]):-
+  H >= 0,
+   !,
+  filter(T,S).
+filter([H|T],S):-
+  H < 0,
+  filter(T,S).
+
+Zad 3
+
+
+factorial(0, 1).
+factorial(N, M) :-
+   N > 0,
+   X is N-1,
+   factorial(X,Y),
+   M is N*Y.
+
+%------------------------------------------------
+concat_number(X,Y):-
+  concat_number(X,0,Y).
+
+concat_number([],Res,Res).
+concat_number([H|T],Element,Res):-
+  NextDigit is (Element * 10) + H,
+  concat_number(T,NextDigit,Res).
+%------------------------------------------------
+decimal(X,Y):-
+  decimal(X,[],Y).
+
+decimal(0,Res,Res):-
+  !.
+
+decimal(X,Digits,Res):-
+  CurrentDigit is X mod 10,
+  Element is X //10,
+  decimal(Element,[CurrentDigit|Digits],Res).
+
+Zad 5
+
+insert([X|Lista],Element,[X|Rest]):-
+  Element>X, !,
+  insert(Lista,Element,Rest).
+insert(Lista,Element,[Element|Lista]).
+
+ins_sort([],[]).
+ins_sort([H|T],Y):-
+   ins_sort(T,Lista),
+   insert(Lista,H,Y).
+
+Zad 6
+
+
+rev(X,Y):-
+  rev(X,[],Y).
+rev([],A,A):-!.
+rev([H|T],A,Y):-
+  rev(T,[H|A],Y).
+

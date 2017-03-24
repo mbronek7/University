@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1488310672 source:/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 1/zad4/zad4/drzewo.c
+	<stdlib.h>
+	<stdio.h>
+	"drzewo.h"
+
+1488310655 /home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 1/zad4/zad4/drzewo.h
+	<stdlib.h>
+	<stdio.h>
+
+1488236017 source:/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 1/zad4/zad4/main.c
+	<stdlib.h>
+	<stdio.h>
+	"drzewo.h"
+
+1488310702 source:/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 1/zad4/zad4/przyklad.c
+	<stdlib.h>
+	<stdio.h>
+	"drzewo.h"
+

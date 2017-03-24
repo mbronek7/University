@@ -1,0 +1,123 @@
+\documentclass{article}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{orange}{\parbox{\textwidth}{Przykład: #3 }}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\title{Notatki do Metod Programowania}
+\author{Michał Bronikowski}
+\usepackage{url}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Wstęp do Prologa}
+\subsection{Kompilowanie}
+Kompilator SWI-PROLOG.\\
+W terminalu komenda:
+
+\begin{itemize}
+\item swipl lub prolog
+\end{itemize}
+?- //Działa\\
+Kompilacja:\\
+Pliki zapisuję z rozszerzeniem .pl. W otwartej "maszynie" prologa wpisuję:\\
+?- [p1].  //p1 - nazwa pliku
+\subsection{Fakty,Zmienne,Koniunkcje}
+lubi(jan,maria).\\
+\begin{itemize}
+\item Fakt musi się kończyć kropką
+\item lubi(jan,\_) - chodzi nam tylko o odpowiedź nie true oe false
+\item  po uzyskaniu odpowiedźi jak klikniemy ';' to uzyskamy kolejną o ile istnieje kończymy Enterem
+\item koniunkcje oznaczamy ',' 
+\begin{lstlisting}[caption=Plik p1.pl]
+ lubi(jan,reksio).
+ lubi(reksio,bartek).
+ lubi(jan,szklanka).
+ lubi(jan,beata).
+\end{lstlisting}
+\begin{lstlisting}[caption=Działanie]
+ ?- [p1]. 
+ ?- lubi(jan ,beata) , lubi(reksio,bartek).
+ true
+\end{lstlisting}
+\end{itemize}
+\subsection{Reguły}
+W prologu reguł używa się do zapisania, że fakt zależy od grupy innych faktów.(W języku polskim do stosowania reguł używa się "jeśli").
+\begin{lstlisting}[caption = Kot lubi każdego kto lubi mleko]
+ czyli:
+ Kot lubi wszystko,jesli to lubi mleko,
+ Kot lubi X,jesli X lubi mleko.
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ lubi(kot,X) :- lubi(X,mleko).
+
+\end{lstlisting}
+\subsection{Struktury}
+Struktury w Prologu zapisujemy podając funktor oraz jego składniki. Nazwa funktor odpowiada typom z tradycyjnych języków programowania.Składniki ujęte są w nawiasach okrągłych i oddzielone od siebie przecinkami. Funktor umieszcza się przed nawiasem otwierającym.
+\begin{lstlisting}[caption = Strukturę można rozbudowywać]
+posiada(jan,rower(wigry(niebieski),1991).
+
+\end{lstlisting}
+
+
+Jan posiada rower marki wigry koloru niebieskiego z 1991 roku
+\subsection{Operatory}
+Operatory nie powodują wykonanai jakichkolwiek obliczeń 3+4 to nie 7 to term +(3,4).
+\begin{itemize}
+\item X \texttt{=:=} X  - X i Y są tę samą liczbą
+\item X \texttt{=\url{\=}} X  - X i Y są różnymi liczbami
+\item X \texttt{<} Y - X jest mniejsze od Y
+\item X \texttt{>} Y  - X jest większe od Y
+\item X \texttt{=<} Y  - X jest mniejsze równe Y
+\item X \texttt{>=} Y  - X jest większe równe Y
+\end{itemize}
+Operator \textbf{is} operator infiksowy jego prawy argument jest termem, który ma być zinterpretowany jako wyrażenie arytmetyczne. Aby uzgodnic wyrażenie Prolog najpierw oblicza wyrażenie arytmetyczne, a wynik dopasowuje do lewego argumentu
+\begin{lstlisting}[caption=Operator "is"]
+ ?- X is 2+5.
+ X = 5
+
+\end{lstlisting}
+Po prawej stronie operatora is można używac takich wyrażeń jak:
+\begin{itemize}
+\item +
+\item -
+\item *
+\item / - iloraz
+\item // całkowity iloraz
+\item mod reszta z dzielenia
+\end{itemize}
+\begin{lstlisting}[caption=Dodawanie]
+dodaj(X,Y,Z) :-Z is X + Y.
+////
+?- dodaj(2,3,A).
+A=5.
+\end{lstlisting}
+\subsection{Listy}
+Lista to struktura danych, która jest ciągiem uporządkowanych elementów(dowolne termy). Głowa listy to pierwszy element, ogon to całą reszta. Zapis  \textbf{\url{[X | Y]}} utożsamaia X z głową listy a Y z ogonem.
+\begin{lstlisting}[caption=Utożsamianie głowy i ogona]
+a([1,2,3]).
+~~~~~~~~~~~~~~
+?- p([X | Y]).
+X=1  Y=[2,3].
+\end{lstlisting}
+\subsection{Przeszukiwanie rekurencyjne}
+Sprawdzmy czy jakis obiekt X jest członkiem listy Y.
+Sprawdzamy dwa warunki:
+\begin{itemize}
+\item X jest elementem Y, gdy jest jego głową
+\item X jest elementem Y, gdy X nalezy do ogana tej listy
+\end{itemize}
+\begin{lstlisting}[caption=Rekurencja]
+member(X,[X,_]). /*X nalezy jesli jest glowa*/
+member(X,[_ | Y]) :- member(X,Y)./*X nalezy jesli jest w ogonie*/
+\end{lstlisting}
+Drugi warunek za każdym razem wywołuje krótszą listę. Więc albo uruchomiona zostanie pierwsza klauzula member albo
+jako drugi argument zostanie przekazana lista długości 0. Sa to warunki graniczne kończące wywoływanie celów member.
+\end{document}
