@@ -1,5 +1,0 @@
-/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 4/zad2/zad2/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 4/zad2/zad2/bin/Debug/zad2.exe.mdb
-/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 4/zad2/zad2/bin/Debug/zad2.exe
-/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 4/zad2/zad2/obj/x86/Debug/zad2.exe
-/home/michal/Studia/Semestr II/Programowanie Obiektowe/Lista 4/zad2/zad2/obj/x86/Debug/zad2.exe.mdb
