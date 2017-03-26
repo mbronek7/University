@@ -1,0 +1,9 @@
+Jesli chodzi o testy wydajnościowe, te trudne wydają się trochę zbyt
+łatwe: formuła z 4 zmiennymi ma 2^4 = 16 wartościowań, trudno
+oczekiwać, że nawet najmniej wydajny program sobie z nią nie poradzi w
+zadanym czasie. Proponuję zaszaleć przynajmniej z liczbą zmiennych,
+niekoniecznie komplikując samą formułę. Proszę pamiętać, że formuła w
+stylu [p1 v ... v p100, ~p1 v ... v ~p100] jest prosta do
+rozszyfrowania dla człowieka, ale łatwo przy jej użyciu odróżnić
+najprostszą implementację naiwną od implementacji wykonującej jakąś
+optymalizację przy pomocy podstawień uogólnionych.

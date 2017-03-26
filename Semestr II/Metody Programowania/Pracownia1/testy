@@ -1,0 +1,12 @@
+
+  tests(trivial,validity,[p],500,solution([(p,t)]))
+  tests(contradictory,validity,[p,~p],500,count(0))
+  tests(var_duplicate,validity,[p v ~p, t , ~p v w],500,solution([(p,f),(t,t)]))
+  tests(trap,validity,[p v s, ~s, s v ~p],600,count(0))
+  tests(artful,validity,[p v q v r, ~r v ~q v ~p, ~q v r, ~r],3000,solution( [(p, t), (r, f), (q, f), (r, f)]))
+  tests(nasty,validity,[~t v a,~t v ~r v s,~a v r, t , ~s],3000,count(0))
+  tests(not_for_naive,performance,[p v s v t v w v q v z, ~p v b v g v f v s v y, o v ~b v ~w v ~z v s, k v f v r v y v e v o v s, b v b v b v s],2152,solution([s,t]))
+  tests(speed_up,performance,[p v p v p v ~s, p v p v p v ~s, p v p v p v p v p v p v b v f v g v z v f ],2152,solution([(p,t)]))
+  tests(stupid_test,performance,[p v a v s v w v e v t v y v u v o v p v h v j v k v l v s v d v c v x v n v m,~p v ~a v ~s v ~w v ~e v ~t v ~y v ~u v ~o v ~p v ~h v ~j v ~k v ~l v ~s v ~d v ~c v ~x v ~n v ~m],2152,cont(0))
+  tests(is_it_stupid_implementation,performance,[p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p v p ],500,solution([p,t]))
+  

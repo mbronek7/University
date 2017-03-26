@@ -26,7 +26,6 @@ void f( )
 int main( int argc, char* argv [ ] )
 {
     // Add more tests by yourself. Untested code = unwritten code.
-
     string s;
     string s2 = "hello";
 
