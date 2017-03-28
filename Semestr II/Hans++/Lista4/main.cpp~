@@ -43,6 +43,6 @@ int main( int argc, char* argv [ ] )
     for( char& c : s )
         c = toupper(c);
     std::cout << s << "\n";
-    if(s < s2) std::cout<<"TAK\n";
+    if(s <s2) std::cout<<"TAK\n";
     else std::cout<<"NIE\n";
 }

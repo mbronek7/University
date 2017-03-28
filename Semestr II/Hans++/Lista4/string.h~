@@ -119,12 +119,30 @@ public:
     iterator end( ) {
         return p + len;
     }
-
+    bool operator == ( const string& s1 )
+    {
+        int i=0;
+	if(len != s1.size()) return false;
+        for( char c : s1 ) {
+            if(c != p[i])return false;
+            i++;
+        }
+        return true;
+    }
+    bool operator != ( const string& s1)
+    {
+       int i=0;
+	if(len != s1.size()) return true;
+        for( char c : s1 ) {
+            if(c != p[i])return true;
+            i++;
+        }
+        return false;
+    }
 };
    string operator + (const  string& s1, const string& s2 );
 
-  bool operator == ( const string& s1, const string& s2 );
-  bool operator != ( const string& s1, const string& s2 );
+
   bool operator < ( const string& s1, const string& s2 );
   bool operator > ( const string& s1, const string& s2 );
   bool operator <= ( const string& s1, const string& s2 );

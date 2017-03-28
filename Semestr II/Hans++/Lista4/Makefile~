@@ -1,4 +1,4 @@
-Flags = -Wextra -Wall -std=c++11 -g
+Flags = -Wextra -Wall -std=c++11
 
 main : main.o string.o 
 	g++ -o main main.o string.o $(Flags)
