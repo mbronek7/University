@@ -17,7 +17,7 @@ class ElementStructure<T> {
     public ElementStructure getNext() { // pobieram nastepny element
         return next;
     }
-
+http://
     public void setNext(ElementStructure<T> next) { //ustawiam nowy nastepny element
         this.next = next;
     }
@@ -99,13 +99,13 @@ class SList<T> {
 
 //Czesc druga zadania
 
-abstract class Stopien implements Comparable<Stopien> {
+abstract class Stopien implements Comparable<Stopien> {//Interfejs ten wymusza zaimplementowanie metody compareTo.
     public Integer ktory_w_hierarchi;
-    public abstract Integer hierarchizacja();
-    public int compareTo(Stopien other) {
-        return hierarchizacja().compareTo(other.hierarchizacja());
+    public abstract Integer hierarchizacja();//abstract bo bez deklaracji deklaruje pozniej w poszczegonych
+    public int compareTo(Stopien other) {//metoda ta zwraca zero gdy są równe -1 jak mniejsze i 1 jak wieksze 
+        return hierarchizacja().compareTo(other.hierarchizacja());//other przeciwienstwo this
     }
-    public abstract String toString();
+    public abstract String toString();//znowu szczegolowa definicja dla kazdej inna jest
 };
 
 class Marszałek extends Stopien {
