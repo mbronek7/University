@@ -17,7 +17,7 @@ class ElementStructure<T> {
     public ElementStructure getNext() { // pobieram nastepny element
         return next;
     }
-
+http://
     public void setNext(ElementStructure<T> next) { //ustawiam nowy nastepny element
         this.next = next;
     }

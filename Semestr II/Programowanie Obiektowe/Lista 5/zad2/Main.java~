@@ -109,7 +109,7 @@ public class Main
 		Wyrazenie wyrazenie = new Operacja (new Stala(20), new Zmienna("x", tree), '-');
 		System.out.println(wyrazenie.toString() + " = " + wyrazenie.oblicz());
 		tree.put("y", 123);
-		tree.put("x", 0);
+tree.put("x", 0);
 		System.out.println("y = " + tree.get("y"));
 		wyrazenie = new Operacja(wyrazenie, new Stala(2), '+');
 		System.out.println(wyrazenie.toString() + " = " + wyrazenie.oblicz());
