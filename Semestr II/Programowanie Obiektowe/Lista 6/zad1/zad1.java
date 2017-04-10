@@ -28,8 +28,10 @@ class Data<T> implements Serializable
 }
 
 
-class List<T> implements Serializable/*
-Serializacja to wbudowany mechanizm zapisywania obiektów, który pozwala na binarny zapis całego drzewa obiektów. Oznacza to tyle, że jeśli mamy obiekt X, który posiada referencję do obiektu Y to serializując X również Y zostanie automatycznie zapisany w strumieniu wyjściowym. - See more at: http://www.samouczekprogramisty.pl/serializacja-w-jezyku-java/#sthash.ez6aljwi.dpuf*/
+class List<T> implements Serializable
+/*
+Serializacja to wbudowany mechanizm zapisywania obiektów, który pozwala na binarny zapis całego drzewa obiektów. Oznacza to tyle, że jeśli mamy obiekt X, który posiada referencję do obiektu Y to serializując X również Y zostanie automatycznie zapisany w strumieniu wyjściowym. - See more at: http://www.samouczekprogramisty.pl/serializacja-w-jezyku-java/#sthash.ez6aljwi.dpuf
+*/
 
 {
 	Data<T> begin;
@@ -109,12 +111,12 @@ Serializacja to wbudowany mechanizm zapisywania obiektów, który pozwala na bin
 	private void writeObject( ObjectOutputStream out) 
 			throws IOException
 	{
-		out.defaultWriteObject();//zaisuje
+		out.defaultWriteObject();
 	}
 	private void readObject(ObjectInputStream in) 
 			throws IOException, ClassNotFoundException
 	{
-		in.defaultReadObject();//wczytuje
+		in.defaultReadObject();
 	}
 
 }

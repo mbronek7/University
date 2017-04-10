@@ -67,7 +67,7 @@ class Producent <T> implements Runnable
 	{
 		while(true){
 
-			myBuf.addElem("wynik pracy producenta");//+System.nanoTime());
+			myBuf.addElem("wynik pracy producenta");
 			System.out.println("wyprodukowałem");
 		}
 	}
