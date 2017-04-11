@@ -1,0 +1,61 @@
+
+#include "listtest.h"
+
+#include <random>
+#include <chrono>
+#include <algorithm>
+
+void convert_vector ( std::list< std::string > & list, std::vector< std::string > & vect )
+{
+    list.clear();
+    for(auto &i : vect) list.push_back( i );
+    
+}
+
+
+void listtest::sort_move( std::list< std::string > & v )
+{
+    for( auto q = v. begin( ); q != v. end( ); ++ q )
+    {
+        for( auto p = v. begin( ); p != q; ++ p )
+        {
+            if( *p > *q )
+            {
+                std::string s = *p;
+                *p = *q;
+                *q = s;
+            }
+        }
+    }
+}
+
+void listtest::sort_assign( std::list< std::string >  & v )
+{
+    for( auto q = v. begin( ); q != v. end( ); ++ q )
+	{
+		for( auto p = v. begin( ); p != q; ++ p )
+		{
+			if( *p > *q )
+			{
+				std::string s = *p;
+				*p = *q;
+				*q = s;
+			}
+		}
+    }
+}
+void listtest::sort_std( std::list< std::string > & v )
+{
+	 std::vector< std::string > v2;
+	 convert_vector(v,v2);
+	 std::sort( v2. begin( ), v2. end( ));
+}
+
+std::ostream& 
+operator << ( std::ostream& out, const std::list< std::string > & list)
+{
+	for(auto &i : list) out << i << "\n";
+            return out;
+}
+
+

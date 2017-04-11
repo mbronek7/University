@@ -27,7 +27,7 @@ namespace vectortest
 }
 
 std::ostream& 
-operator << ( std::ostream& , const std::vector< std::string > & );
+operator << ( std::ostream& out, const std::vector< std::string > & vect);
    // Must be not in namespace. 
 
 #endif 

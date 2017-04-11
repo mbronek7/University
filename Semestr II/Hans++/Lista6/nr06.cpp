@@ -10,6 +10,12 @@
 
 int main( int argc, char* argv [] )
 {
+//for (int i =0;i<10000000;i++) std::cout << "a";
+//return 0;
+std::ifstream is("test.txt");
+std::vector<std::string> x = vectortest::readfile(is);
+std::cout << "przeczytalem " << x.size() << " " << x[0].size() << "\n";
+
 
    std::vector< std::string > vect;
 
@@ -25,7 +31,42 @@ int main( int argc, char* argv [] )
    std::cout << vect << "\n";
 
    std::cout << "sorting took " << d. count( ) << " seconds\n";
-   return 0;
+
+
+   std::vector< std::string > v1 = vectortest::randomstrings(1205600,40);
+   std::vector< std::string > v2 = v1;
+   std::vector< std::string > v3 = v1;
+	{
+		timer t1 ("sort_assign",std::cout);
+		vectortest::sort_assign( v1 );
+	}
+	{
+		timer t1 ("sort_move",std::cout);
+		vectortest::sort_move( v1 );
+	}
+	{
+		timer t1 ("sort_std",std::cout);
+		vectortest::sort_std( v1 );
+	}
+   std::vector< std::string > v4 = vectortest::randomstrings(1205600,40);
+   std::list< std::string > l1;
+   std::cout<<" SORT ON LISTS\n\n";
+   convert_vector(l1,v4);
+   std::list< std::string > l2 = l1;
+   std::list< std::string > l3 = l1;
+	{
+		timer t1 ("sort_assign",std::cout);
+		listtest::sort_assign( l1 );
+	}
+        {
+		timer t1 ("sort_move",std::cout);
+		listtest::sort_move( l1 );
+	}
+        {
+		timer t1 ("sort_std",std::cout);
+		listtest::sort_std( l3 );
+	}
+  return 0;
 }
 
 
