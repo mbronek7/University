@@ -34,10 +34,9 @@ vectortest::randomstrings( size_t nr, size_t s )
 std::vector<std::string>
 vectortest::readfile( std::istream& input )
 {
-    std::string word = "";
+    std::string word;
     std::vector< std::string > vect;
     if( !input.good() ) return vect;
-
 
     while( input.good() )
     {
@@ -45,37 +44,38 @@ vectortest::readfile( std::istream& input )
 
         if(isspace(c) || ispunct(c) || !isprint(c))
         {
-            if(word.size() > 0) vect.push_back(word), word = "";
+            if(!word.empty()) vect.push_back(word), word = "";
         }
-        else word += (char) c;
+        else word += static_cast<char>(c);
     }
 
-    if(word.size() > 0) vect.push_back(word);
+    if(!word.empty()) vect.push_back(word);
     return vect;
 }
 
 void vectortest::sort_assign( std::vector< std::string > & v )
 {
-    for( size_t j = 0; j < v. size( ); ++ j )
-        for( size_t i = 0; i < j; ++ i )
+     for( auto j = v. begin( ); j != v. end( ); ++ j )
+        for( auto i = v. begin( ); i != j; ++ i )
         {
-            if( v[i] > v[j] )
+            if( *i > *j )
             {
-                std::string s = v[i];
-                v[i] = v[j];
-                v[j] = s;
+                std::string s = *i;
+                *i = *j;
+                *j = s;
             }
         }
 }
 
 void vectortest::sort_move( std::vector< std::string > & v )
 {
-    for( size_t j = 0; j < v. size( ); ++ j )
+
+    for( auto j = v. begin( ); j != v. end( ); ++ j )
     {
-        for( size_t i = 0; i < j; ++ i )
+        for( auto i = v. begin( ); i != j; ++ i )
         {
-            if( v[i] > v[j] )
-                std::swap( v[i], v[j] );
+            if( *i > *j )
+                std::swap( *i, *j );
         }
     }
 }

@@ -3,6 +3,7 @@
 #define LISTTEST_INCLUDED   1
 
 #include <list> 
+#include <vector>
 #include <string> 
 #include <fstream>
 #include <iostream>
@@ -31,9 +32,71 @@ namespace listtest
 }
 
 std::ostream& 
-operator << ( std::ostream& , const std::list< std::string > & );
+operator << ( std::ostream& out, const std::list< std::string > & list);
    // Must be not in namespace. 
 
+void convert_vector ( std::list< std::string > & list, std::vector< std::string > & vect );
 #endif 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

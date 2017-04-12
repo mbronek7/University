@@ -5,11 +5,13 @@
 #include <chrono>
 #include <algorithm>
 
-std::ostream& operator << ( std::ostream& stream, const std::list< std::string > & L)
+void convert_vector ( std::list< std::string > & list, std::vector< std::string > & vect )
 {
-    for(auto &i : L) stream << i << "\n";
-    return stream;
+    list.clear();
+    for(auto &i : vect) list.push_back( i );
+    
 }
+
 
 void listtest::sort_move( std::list< std::string > & v )
 {
@@ -41,6 +43,17 @@ void listtest::sort_assign( std::list< std::string >  & v )
 			}
 		}
     }
+}
+void listtest::sort_std( std::list< std::string > & v )
+{
+	v.sort();
+}
+
+std::ostream& 
+operator << ( std::ostream& out, const std::list< std::string > & list)
+{
+	for(auto &i : list) out << i << "\n";
+            return out;
 }
 
 
