@@ -1,0 +1,248 @@
+import java.awt.TexturePaint;
+import java.util.ArrayList;
+import java.util.Collections;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+
+abstract class Pojazd implements Serializable
+{
+	String marka;
+	Integer rok;
+	Integer przebieg;
+	public Pojazd(String marka, Integer rok, Integer przebieg) {
+		this.marka = marka;
+		this.rok = rok;
+		this.przebieg = przebieg;
+	}
+	abstract public String toString();
+}
+
+class Samochod extends Pojazd{
+	Double cena;
+	
+	public Samochod(String marka, Integer rok, Integer przebieg, Double cena) {
+		super(marka, rok, przebieg);
+		this.cena = cena;
+	}
+
+	public String toString() {
+		return (marka + "  " + rok + "  " + przebieg + "  " + cena);
+	}
+	
+}
+
+class Tramwaj extends Pojazd{
+	Integer maxLiczOsob;
+	
+	public Tramwaj(String marka, Integer rok, Integer przebieg, Integer maxLiczOsob) {
+		super(marka, rok, przebieg);
+		this.maxLiczOsob = maxLiczOsob;
+	}
+	
+	public String toString() {
+		return (marka + "  " + rok + "  " + przebieg + "  " + maxLiczOsob);
+	}
+}
+
+
+class GuiTest extends JComponent implements ActionListener, Serializable
+{
+	Pojazd pojazd;
+	Samochod samochod;
+	Tramwaj tramwaj;
+	JButton bSave, bOpenT, bOpenS;
+	JTextField typ, marka, przebieg, rok ,dodatkowe;
+	JLabel dodatkowe_etykieta;
+	
+	public GuiTest(Samochod s){
+		this.pojazd = s;
+		this.samochod = s;
+	}
+	public GuiTest(Tramwaj t){
+		//this.pojazd = t;
+		this.pojazd = t;
+		this.tramwaj = t;
+	}
+	
+	void setData(){
+		typ.setText(pojazd.getClass().getSimpleName());
+		marka.setText(pojazd.marka);
+		rok.setText(pojazd.rok.toString());
+		przebieg.setText(pojazd.przebieg.toString());
+		if(pojazd.getClass() == Samochod.class){
+			dodatkowe_etykieta.setText("Cena");
+			dodatkowe.setText(samochod.cena.toString());
+		}
+		if(pojazd.getClass() == Tramwaj.class){
+			dodatkowe_etykieta.setText("Liczba Osob");
+			dodatkowe.setText(tramwaj.maxLiczOsob.toString());
+		}
+	}
+	
+	public void mkWin(){
+        JFrame frame = new JFrame("Edycja");
+    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	Container kontener = frame.getContentPane();
+    	GridLayout layout = new GridLayout(4,2);
+        frame.setLocationRelativeTo(null);
+     	kontener.setLayout(layout);
+         JButton closeButton  = new JButton("Close");
+         kontener.add(closeButton);/*
+        JLabel typ_etykieta = new JLabel("Typ");
+        kontener.add(typ_etykieta);
+    	typ = new JTextField(pojazd.getClass().getSimpleName(), 40);
+    	kontener.add(typ);
+    	
+    	JLabel marka_etykieta = new JLabel("Marka");
+    	kontener.add(marka_etykieta);
+    	marka = new JTextField(pojazd.marka, 40);
+    	kontener.add(marka);
+    	
+    	JLabel rok_etykieta = new JLabel("Rok Prod");
+    	kontener.add(rok_etykieta);
+    	rok = new JTextField(pojazd.rok.toString(), 40);
+    	kontener.add(rok);
+    	
+    	JLabel przebieg_etykieta = new JLabel("Przebieg");
+    	kontener.add(przebieg_etykieta);
+    	przebieg = new JTextField(pojazd.przebieg.toString(), 40);
+    	kontener.add(przebieg);
+    	
+    	if(pojazd.getClass() == Samochod.class){
+    		dodatkowe_etykieta = new JLabel("cena");
+    		kontener.add(dodatkowe_etykieta);
+    		dodatkowe = new JTextField(samochod.cena.toString(), 40);
+    		kontener.add(dodatkowe);
+    	}
+    	if(pojazd.getClass() == Tramwaj.class){
+    		dodatkowe_etykieta = new JLabel("Liczba Osob");
+    		kontener.add(dodatkowe_etykieta);
+    		dodatkowe = new JTextField(tramwaj.maxLiczOsob.toString(), 40);
+    		kontener.add(dodatkowe);
+    	}
+    	
+    	bOpenT = new JButton("Open Tramwaj");
+    	bOpenT.addActionListener(this);
+    	kontener.add(bOpenT);
+    	bOpenS = new JButton("Open Samochod");
+    	bOpenS.addActionListener(this);
+    	kontener.add(bOpenS);
+    	bSave = new JButton("Zapisz");
+    	bSave.addActionListener(this);
+    	kontener.add(bSave);*/
+    	frame.pack();
+    	frame.setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent e)
+	{
+		if(e.getSource() == bSave)
+		{
+			System.out.println("zapisz");
+			JFileChooser fileChooser = new JFileChooser();
+			if (fileChooser.showSaveDialog(bSave) == JFileChooser.APPROVE_OPTION)
+			{
+				File fileS = fileChooser.getSelectedFile();
+				try
+				{
+		            FileOutputStream file = new FileOutputStream(fileS);
+		            ObjectOutputStream strOut = new ObjectOutputStream(file);
+		            Pojazd pojazdS;
+		            System.out.println(typ.getText());
+		            if(typ.getText().equals("Samochod"))
+		            	pojazdS = new Samochod(marka.getText(), Integer.parseInt(rok.getText()), 
+		            								  Integer.parseInt(przebieg.getText()), Double.parseDouble(dodatkowe.getText()));
+		            else 
+		            	pojazdS = new Tramwaj(marka.getText(), Integer.parseInt(rok.getText()), 
+		            								 Integer.parseInt(przebieg.getText()), Integer.parseInt(dodatkowe.getText()));
+		            
+		            System.out.println(pojazdS.getClass().getSimpleName());
+		            strOut.writeObject(pojazdS);
+		            strOut.close();
+		            file.close();
+		        }
+				catch(IOException q)
+		        {
+		            q.printStackTrace();
+		        }
+			
+			}
+			
+		}
+		if(e.getSource() == bOpenT)
+		{
+			JFileChooser fileChooser = new JFileChooser();
+			if (fileChooser.showOpenDialog(bOpenT) == JFileChooser.APPROVE_OPTION)
+			{
+				File fileO = fileChooser.getSelectedFile();
+				try
+				{
+		            FileInputStream file = new FileInputStream(fileO);
+		            ObjectInputStream strIn = new ObjectInputStream(file);
+		            tramwaj   = (Tramwaj)   strIn.readObject();
+		            strIn.close();
+		            file.close();
+		        }
+				catch(IOException q)
+		        {
+		            q.printStackTrace();
+		            return;
+		        }catch(ClassNotFoundException q)
+		        {
+		            q.printStackTrace();
+		            return;
+		        }
+				pojazd = tramwaj;
+				setData();
+				
+				
+			}
+		}
+		if(e.getSource() == bOpenS)
+		{
+			JFileChooser fileChooser = new JFileChooser();
+			if (fileChooser.showOpenDialog(bOpenS) == JFileChooser.APPROVE_OPTION)
+			{
+				File fileO = fileChooser.getSelectedFile();
+				try
+				{
+					FileInputStream file = new FileInputStream(fileO);
+					ObjectInputStream strIn = new ObjectInputStream(file);
+					samochod   = (Samochod)   strIn.readObject();
+					strIn.close();
+					file.close();
+				}
+				catch(IOException q)
+				{
+					q.printStackTrace();
+					return;
+				}catch(ClassNotFoundException q)
+				{
+					q.printStackTrace();
+					return;
+				}
+				pojazd = samochod;
+				setData();	
+				
+			}
+		}
+	}
+
+}
+
+
+public class zad {
+    public static void main(String[] args) {
+    	Samochod s = new Samochod("marek", 1996, 0, 2.59);
+    	Tramwaj  t = new Tramwaj("marktram1", 2025, 3, 2999);
+    	System.out.println(s);
+    	System.out.println(t);
+    	
+    	GuiTest gui = new GuiTest(t); 
+    	gui.mkWin();
+    			 
+    }    
+}
