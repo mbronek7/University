@@ -4,14 +4,14 @@ class Funkcja
       @function = block
   end
 
-  def value (x)
+  def value (x)   # oblicza wartoscfunkvji w punkcie x 
     @function.call x
   end
 
-  def zerowe a, b, e
+  def zerowe a, b, e  # miejsca zerowe w przedziale od a do b z dokladnoscia e
     ((-e...e) === value(a) and return a) or ((-e...e) === value(b) and return b)
 
-    middle = (a + b) / 2.0
+    middle = (a + b) / 2.0 # obliczam msrodek przedzialu i bede szedl i na lewo i na prawo
 
     (-e...e) === value(middle) and return middle
 
@@ -24,15 +24,15 @@ class Funkcja
     $n = 1000
     @dx = (b - a) / $n.to_f
 
-    $n.times { |x| area += @dx * value( a + x * @dx) }
+    $n.times { |x| area += @dx * value( a + x * @dx) } # n razy wykonaj znowu przybliz wartosc
 
     return area
   end
 
 
-  def poch x
+  def poch x  # pochodna w punkcie 
     $h = 1.0e-10
-    return (value(x + $h) - value(x)) / $h
+    return (value(x + $h) - value(x)) / $h  # wzor ogolny na pochodna niedokladna wartosc
   end
 
 end

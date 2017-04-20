@@ -52,14 +52,8 @@
 
  end
 
- module T
-   def hi
-     puts "hi"
-   end
- end
-
  class ImageBW < Image
-   #include T
+   
   def initialize(width, height)
     @width  = width
     @height = height
