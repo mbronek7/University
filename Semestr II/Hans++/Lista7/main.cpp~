@@ -65,18 +65,18 @@ struct case_insensitive_hash
 
 struct case_insensitive_equality
 {
-
+        case_insensitive_hash h;
 	bool operator( ) ( const std::string& string1, const std::string& string2 ) const
 	{
-		if (string1.size() != string2.size()) return false;
 		auto p2 = string2.begin();
 		auto p3 = string2.end(); 
-		for(auto p1 = string1.begin(); p1 != string1.end(); ++p1,++p2)
+		for(auto p1 = string1.begin(); p1 != string1.end(); ++p1)
 		{
 			auto p4 = tolower(*p1);
 			auto p5 = tolower(*p2); 
+			if(p2 == p3) return false;
 			if(p4 != p5) return false;
-
+			p2++;
 		}
 	 return true;
 		
