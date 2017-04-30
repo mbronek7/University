@@ -245,7 +245,7 @@ public class zad {
     	Tramwaj  t = new Tramwaj("marktram1", 2025, 2999, 13);
     	System.out.println(s);
     	System.out.println(t);
-    	GuiTest gui = new GuiTest(t); 
+    	GuiTest gui = new GuiTest(s); 
     	gui.mkWin();
     			 
     }    
