@@ -1,8 +1,3 @@
-# coding: utf-8
- class TrueClass;  def to_im; "█"; end; end
- class FalseClass; def to_im; " "; end; end
-
-
 
  def czarnyczybialy?
      x = rand(100)
@@ -43,7 +38,7 @@
     (0...@height).each do |y|
       (0...@width).each do |x|
 
-        printf( "\x1B[%im%s%s", 90+@image[y][x], "█", "\033[0m" )
+        printf( "\x1B[%im%s%s", 90+@image[y][x], "▇", "\033[0m" ) # \x do wyswietlania koloe
       end
       puts
     end

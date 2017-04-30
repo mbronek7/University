@@ -1,0 +1,19 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{secdot}
+\title{Michał Bronikowski \protect\\ Rozwiązania wybranych zadań z czwartej listy}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\section{\normalsize{W wielu protokołach warstwowych każda warstwa ma własny nagłówek. Z pewnością bardziej efektywne od używania wszystkich tych osobnych nagłówków byłoby poprzedzenie komunikatu jednym nagłówkiem, zawierającym całość informacji sterującej. Dlaczego się tego nie robi?}}
+Nie robi się tak, ponieważ taki proceder byłby sprzeczny z podstawową zasadą mówiącą o niezależności każdej warstwy.
+\section{\normalsize{Dlaczego usługi komunikacyjne warstwy transportu są często nieodpowiednie do budowania aplikacji rozproszonych?}}
+W odpowiedzi posłuże się przykładem z ćwiczeń. Z pustaków szybciej wybudujemy dom, ale będzie on gorszej jakości niż z cegieł. Rzeczy które są uniwersalne nie zawsze są najbardziej efektywną opcją. Jak ktoś mądry powiedział "Jak coś jest do wszystkiego to jest do niczego". Dla konkretnej aplikacji najlepszą opcją jest stworzenie usług napisanych specjalnie pod specyfikację tej aplikacji.
+\section{\normalsize{Usługa niezawodnego rozsyłania umożliwia nadawcy niezawodne przekazywanie komunikatów grupie odbiorców. Czy taka usługa powinna należeć do oprogramowania warstwy pośredniej, czy też powinna być częścią niższej warstwy?}}
+Taka usługa powinna być częścią warstwy pośredniej.
+\section{\normalsize{Podaj przykład na rzecz przydatności rozsyłania także w strumieniach danych dyskretnych.}}
+Na pewno korzystają z tego instytucje finansowe, które raczej nie chcą dzielić się swoimi danymi. Weźmy na przykład giełdę Warszawską i biura maklerskie, które rozsyłają zlecenia kupna jakiś akcji. Jestem pewien, że ostatnią rzeczą jaką by chcieli jest podejrzenie tych zleceń przez jakiś algorytm, który ich uprzedzi i podniesie cene.
+\end{document}

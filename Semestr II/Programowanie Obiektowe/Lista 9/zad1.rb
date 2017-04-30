@@ -4,7 +4,7 @@ class Funkcja
       @function = block
   end
 
-  def value (x)   # oblicza wartoscfunkvji w punkcie x 
+  def value (x)   # oblicza wartoscfunkcji w punkcie x 
     @function.call x
   end
 
