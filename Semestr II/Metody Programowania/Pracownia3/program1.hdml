@@ -1,0 +1,2 @@
+def program1(_) =
+	let (_,_,_,_) = program1(_) in [if [ ] then [ ] else[ ] ]

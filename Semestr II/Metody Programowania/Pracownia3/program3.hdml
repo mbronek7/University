@@ -1,0 +1,11 @@
+def definicja(A,B,C,D) =
+	let (A,C) = to in 456,
+	C # [let D = be in 687]
+
+def half_adder(A, B) =
+    A&B, A^B
+
+def main(A, B, C) =
+  let C1, S1 = definicja(A, B, C, D) in
+  let C2, S2 = half_adder(A, B) in
+  ~((C1 ^ C2) | or_of(S1 ^ S2))

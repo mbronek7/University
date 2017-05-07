@@ -1,0 +1,29 @@
+def full_adder(A, B, C) =
+  let C1, S1 = half_adder(A, B) in
+  let C2, S2 = half_adder(S1, C) in
+  C1|C2, S2
+
+def nonadder(A, B, C) =
+  if #A = 0 then C, [0]
+  else
+    let P, G, S = full_adder(A, B, C) in
+    G | P&C, S
+
+def def sth(A,B) =
+  let N = #A in
+  if N = 0 then B,B
+  else if N = 1 then A
+  else
+    let H = N / 2 in
+    sth(A[H-1..0],B) | sth(A[N-1..H],B)
+
+def log_depth_adder(A, B, C) =
+      if #A = 0 then C, []
+      else
+        let P, G, S = log_depth_adder_aux(A, B, C) in
+        G | P&C, S
+
+def def main(A, B, C) =
+  let C1, S1 = nonadder(A, B, C) in
+  let C2, S2 = leg_depth_adder(A, B, C) in
+  ~((C1 ^ C2) | sth(S1 ^ S2)),B")

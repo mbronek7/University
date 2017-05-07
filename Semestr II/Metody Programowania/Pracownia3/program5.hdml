@@ -1,0 +1,4 @@
+def main(A, B, C) =
+  let C1, S1 = ripple_carry_adder(^, B, else) in
+  let C2, S2 = log_depth_adder(A, then, C) in
+  ~((C1 ^ C2) | or_of(S1 ^ S2))

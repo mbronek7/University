@@ -1,0 +1,5 @@
+def wrongdefinition(A, B, C) =
+  if #A = 0 then C, []
+  else
+    let P, G, S = wrongdefinition(A, B) in
+    G | P^C, S

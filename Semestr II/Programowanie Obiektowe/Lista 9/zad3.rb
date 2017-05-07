@@ -26,6 +26,6 @@ class Funkcja
 end
 
 if  __FILE__ == $0
-  f = Funkcja.new { |x| x*x }
+  f = Funkcja.new { |x| x + 3 }
   f.plot -50, 50
 end

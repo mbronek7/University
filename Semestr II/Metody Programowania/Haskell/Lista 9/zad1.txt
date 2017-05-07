@@ -1,0 +1,19 @@
+
+  Teza :rev = reverse
+  
+ D-d
+ ___ :
+ 
+      (1) rev a:b = reverse a:b
+      (2) aux ys a:b = reverse a:b
+      (3) aux a:ys b = reverse b ++ a
+      
+      ____________________________-
+      
+      aux b x:xs = reverse x:xs ++ b  // gdzie b = []
+      
+      Prawa Strona =
+      reverse x:xs ++ b = reverse xs ++ x ++ b = (reverse xs) x:b
+      
+      Lewa Strona =          z (3) 
+      aux b x:xs = aux x:b xs  = reverse xs ++ x 

@@ -1,0 +1,2 @@
+def add(a,_,B) =
+        a + B
