@@ -80,32 +80,29 @@ std::list< move > findpath( const leveltable& levels, fifteen f, unsigned int le
       // All possible moves in a vector.
 
    std::list< move > path;
+  while(levels.at(f)){
+    fifteen best = f;
+    move last;
 
-   while(level != 0)
-	{
-		for(auto &i:moves)
-		{
-			try
-			{
-				fifteen f1 = f;
-				f1.makemove(i);
+    for (move i : moves){
+      fifteen temp = f;
 
-				auto it = levels.at(f1);
+      try {
+        temp.makemove(i);
 
-				if( it + 1 == level)
-				{
-					level--;
-					f=f1;
-					path.push_front(-i); break;
-				}
+        if(levels.at(temp) < levels.at(best) && levels.find(temp) != levels.end()){
+          best = temp;
+          last = i;
+        }
+      }
+      catch (illegalmove &m){}
+      catch (std::out_of_range &o){}
+    }
+    path.push_front(last);
+    f = best;
+  }
+  return path;
 
-			}
-			catch(illegalmove& m) {}
-			catch(std::out_of_range& m) {}
-		}
-	}
-
-   return path;
 }
 
 

@@ -125,7 +125,7 @@ bool fifteen::issolved( ) const
 //
 size_t fifteen::distance( ) const
 {
-	int  dist = 0;  // wartosc poczatkowa
+	size_t  dist = 0;
 
 	for(size_t i = 0; i < dimension; ++i) // for po całym wymiarze planszy
 	{
@@ -143,7 +143,7 @@ size_t fifteen::distance( ) const
 using position = std::pair< size_t, size_t > ;
 position fifteen::solvedposition( size_t val )
 {
-	std::pair< size_t, size_t > p = std::make_pair((val-1)/dimension, (val-1) % dimension);
-	if(val==0) p = std::make_pair(dimension-1, dimension-1);
+	position p = {(val-1)/dimension, (val-1) % dimension};
+	if(val==0) p ={dimension-1, dimension-1};
 	return p;
 }
