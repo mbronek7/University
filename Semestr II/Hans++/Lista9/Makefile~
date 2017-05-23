@@ -3,7 +3,7 @@
 # Makefile-generator programmed by Hans de Nivelle, 2002
 
 
-Flags = -Wall -Wreturn-type -pedantic -pedantic-errors -Wundef -std=c++11
+Flags = -Wreturn-type -pedantic -pedantic-errors -Wundef -std=c++11
 CPP = g++
 
 
