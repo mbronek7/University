@@ -38,7 +38,8 @@ int main( int argc, char* argv [] )
    pol[ { } ] = 1;
    pol[ { "x" } ] = rational( 1, N );
 
-
+   pol[ {} ] = 1;
+   pol[ {"x"}] = 1;
 
    std::cout << pol * pol * pol * pol * pol;
 

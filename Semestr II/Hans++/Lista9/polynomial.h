@@ -6,7 +6,7 @@
 #include <map>
 
 template< typename N >
-struct polynomial
+struct polynomial 
 {
 
    std::map< powerproduct, N, powerproduct::cmp > repr;
@@ -26,22 +26,22 @@ struct polynomial
    const N& operator [] ( const powerproduct& c ) const
       { return repr[c]; }
 
-   N& operator [] ( const powerproduct& c )
+   N& operator [] ( const powerproduct& c ) 
       { return repr[c]; }
 
 
    polynomial( )
-      { }
-
-   polynomial( const powerproduct& chain )
+      { } 
+    
+   polynomial( const powerproduct& chain ) 
    {
       repr[ chain ] = 1;
-   }
+   }     
 
-   template< typename D >
+   template< typename D > 
    polynomial( const D& d )
    {
-      repr[ {} ] = d;
+      repr[ {} ] = d; 
    }
 
    polynomial operator - ( )
@@ -51,28 +51,28 @@ struct polynomial
          p. second = - p. second;
       return res;
    }
-
+   
    polynomial& operator += ( const polynomial& pol )
    {
       for( const auto& p : pol. repr )
       {
          (*this)[ p. first ] += p. second;
       }
-      return *this;
+      return *this; 
    }
 
    polynomial& operator -= ( const polynomial& pol )
    {
       for( const auto& p : pol. repr )
          (*this) [ p. first ] -= p. second;
-      return *this;
+      return *this; 
    }
 
    template<typename X > polynomial<N> & operator *= ( X x )
    {
       for( auto& p : *this )
          p. second *= x;
-      return *this;
+      return *this; 
    }
 
    template< typename X > polynomial<N> & operator /= ( X x )
@@ -83,69 +83,36 @@ struct polynomial
    }
 
 };
-// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//                        5  i   6
-template< typename N >
-polynomial<N> operator + (const polynomial<N>& pol1, const polynomial<N>& pol2)
-{
-	polynomial<N> pol = pol1;
-	pol += pol1;      // tak jak w treci nie trudne bo moge uzyc +=
 
-	return pol;
-}
 
-template< typename N >
-polynomial<N> operator - (const polynomial<N>& pol1, const polynomial<N>& pol2)
-{
-	polynomial<N> pol = pol1;
-	pol -= pol1;   // tak jak w treci nie trudne bo moge uzyc -=
-
-	return pol;
-}
-
-template< typename N >
-polynomial<N> operator * (const polynomial<N>& pol1, const polynomial<N>& pol2)
-{
-	polynomial<N> pol;
-
-	for (auto it1 = pol1.begin(); it1 != pol1.end(); it1++)
-		for (auto it2 = pol2.begin(); it2 != pol2.end(); it2++)
-			pol[it1->first * it2->first] += it1->second * it2->second;
-
-	return pol;
-}
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^66
 template< typename M, typename N >
-polynomial<M> operator * ( const polynomial<M> & pol, N n )
+polynomial<M> operator * ( polynomial<M> pol, N n )
 {
-   auto res = pol;
-   res *= n;
-   return res;
+   pol *= n;
+   return pol;
 }
 
 
 template< typename M, typename N >
-polynomial<M> operator / ( const polynomial<M> & pol, N n )
+polynomial<M> operator / ( polynomial<M> pol, N n )
 {
-   auto res = pol;
-   res /= n;
-   return res;
+   pol /= n;
+   return pol;
 }
 
 
 template< typename M, typename N >
-polynomial<N> operator * ( M m, const polynomial<N> & pol )
+polynomial<N> operator * ( M m, polynomial<N> pol )
 {
-   auto res = pol;
-   res *= m;
-   return res;
+   pol *= m;
+   return pol;
 }
 
 
 template< typename N >
 std::ostream& operator << ( std::ostream& out, const polynomial<N> & pol )
 {
-   bool somethingprinted = false;
+   bool somethingprinted = false; 
 
    for( auto p = pol. begin( ); p != pol. end( ); ++ p )
    {
@@ -157,7 +124,7 @@ std::ostream& operator << ( std::ostream& out, const polynomial<N> & pol )
             out << ( p -> second ) << ".";
          out << ( p -> first );
 
-         somethingprinted = true;
+         somethingprinted = true; 
       }
    }
 
@@ -167,5 +134,36 @@ std::ostream& operator << ( std::ostream& out, const polynomial<N> & pol )
    return out;
 }
 
+// ----------------------------------- TASK NO 5
 
-#endif
+template< typename M>
+polynomial<M> operator + ( const polynomial<M> & pol, const polynomial<M> & pol2  )
+{
+   auto res = pol;
+   res += pol2;
+   return res;
+}
+
+
+template< typename M >
+polynomial<M> operator - ( const polynomial<M> & pol, const polynomial<M> & pol2  )
+{
+   auto res = pol;
+   res -= pol2;
+   return res;
+}
+
+// ---------------------------------- TASK NO 6
+
+template< typename M >
+polynomial<M> operator * ( const polynomial<M> & pol1, const polynomial<M> & pol2 ){
+   polynomial<M> res;
+   for( auto it1 = pol1.begin(); it1 != pol1.end(); it1++)
+      for( auto it2 = pol2.begin(); it2 != pol2.end(); it2++)
+        res[ it1 ->first * it2->first ] += it1->second * it2 ->second;
+   return res;
+}
+
+#endif 
+
+

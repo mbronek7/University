@@ -64,29 +64,45 @@ int powerproduct::power( ) const
 
 int powerproduct::compare(const powerproduct & c1, const powerproduct & c2)
 {
+	int expSum1 = 0;
+	for (size_t i = 0; i < c1.repr.size(); i++)
+	{
+		expSum1 += c1.repr[i].n;
+	}
+
+	int expSum2 = 0;
+	for (size_t i = 0; i < c2.repr.size(); i++)
+	{
+		expSum2 += c2.repr[i].n;
+	}
+
+ // Podział na 3 przypadki do porownania jak suma jak sa rown etopotem po rozmiarze i na koncu alfabetycznie
+	if (expSum1 < expSum2) return -1;
+	if (expSum1 > expSum2) return 1;
 
 	if (c1.repr.size() < c2.repr.size()) return -1;
 	if (c1.repr.size() > c2.repr.size()) return 1;
 
 	// alfabetycznie
-
-	for (size_t i = 0; i < c1.repr.size(); i++)
+	int n = c1.repr.size();
+	for (size_t i = 0; i < n; i++)
 	{
-//if (==)
-  //if (<) return -1; else return 1;
-
 		if (c1.repr[i].n < c2.repr[i].n)
 			return -1;
 
 		if (c1.repr[i].n > c2.repr[i].n)
 			return 1;
-                if (c1.repr[i].v < c2.repr[i].v)
+	}
+        
+    
+	for (size_t i = 0; i < n; i++)
+	{
+		if (c1.repr[i].v < c2.repr[i].v)
 			return -1;
 
 		if (c1.repr[i].v > c2.repr[i].v)
 			return 1;
 	}
-
 	return 0;
 }
 
