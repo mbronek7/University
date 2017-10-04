@@ -7,41 +7,41 @@ def printres x
         print "#{i} wyraz ciągu to #{x[i]}\n"
     end
 end 
-def ciag n
+def sequence n
  if n == 0
      return 1
  elsif n == 1
      return 1/5.0 
  else
-     return 26/5.0 * ciag( n-1 ) - ciag( n-2 )
+     return 26/5.0 * sequence( n-1 ) - sequence( n-2 )
  end
 end 
 
-def go n
+def compute n
     x = Array.new
     for i in 0..n
-        x[i] = ciag i
+        x[i] = sequence i
     end
     printres x
 end
 =begin
 Teraz druga metoda implementacji problemu
 =end
-memoize(:ciag2,"ciag.cache")
-def ciag2 n
+memoize(:sequence2,"sequence.cache")
+def sequence2 n
   if n == 0
       return Rational(1/1)
   elsif n == 1
       return Rational(1,5)
   else
-      return Rational(26,5) * ciag2( n-1 ) - ciag2( n-2 )
+      return Rational(26,5) * sequence2( n-1 ) - sequence2( n-2 )
   end 
 end
  
-def go2 n
+def compute2 n
     x = Array.new
     for i in 0..n
-        x[i] = ciag2 i
+        x[i] = sequence2 i
     end
     printres x
 end
