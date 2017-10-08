@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Opis zadania}{3}
+\contentsline {subsection}{\numberline {1.1}Problem z\IeC {\l }odzieja jab\IeC {\l }ek}{3}
+\contentsline {subsection}{\numberline {1.2}Rozwi\IeC {\k a}zanie}{3}
+\contentsline {section}{\numberline {2}Opis implementacji}{3}
+\contentsline {section}{\numberline {3}Testowanie}{5}

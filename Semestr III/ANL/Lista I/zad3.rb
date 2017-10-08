@@ -1,4 +1,3 @@
-
 def picalc(k)
     sum = 0
     for i in 0..k
@@ -6,3 +5,4 @@ def picalc(k)
     end
     sum * 4
 end
+
