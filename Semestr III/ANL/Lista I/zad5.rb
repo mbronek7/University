@@ -1,14 +1,17 @@
-
 def calc(x,k)
-    sum = 0
+    sum = 0 
     for i in 1..k 
-        sum+=((-1) ** (i-1) ) * (((x-1) ** i) / i)
+        sum+=(((-1) ** (i-1) ) * (((x-1) ** i) / i))
     end
     sum
 end
 
 def ln x
-    arg = x/Math::E
-    1 + calc(arg,690)
+    if  x > 5
+      temp = x / Math::E 
+     return 1 + 1 + ln(temp/Math::E)
+    else
+     return 1 + calc((x / Math::E),30)
+    end 
 end
 
