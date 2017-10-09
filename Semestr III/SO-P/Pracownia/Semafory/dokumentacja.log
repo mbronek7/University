@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.6)  9 OCT 2017 01:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.6)  9 OCT 2017 01:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1178,11 +1178,11 @@ l.51 \caption
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<zlodziej.png, id=15, 871.255pt x 591.20876pt>
+<zlodziej.png, id=15, 1022.82124pt x 596.2275pt>
 File: zlodziej.png Graphic file (type png)
  <use zlodziej.png>
 Package pdftex.def Info: zlodziej.png used on input line 55.
-(pdftex.def)             Requested size: 345.0pt x 234.10675pt.
+(pdftex.def)             Requested size: 345.0pt x 201.10437pt.
 
 
 ! LaTeX Error: \caption outside float.
@@ -1294,7 +1294,7 @@ t/fonts/type1/public/pl/plbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/pl/plbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb>
-Output written on dokumentacja.pdf (6 pages, 290631 bytes).
+Output written on dokumentacja.pdf (6 pages, 291474 bytes).
 PDF statistics:
  53 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream

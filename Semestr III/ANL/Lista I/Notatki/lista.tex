@@ -1,0 +1,212 @@
+\documentclass[fleqn]{article}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{mathexam}
+\usepackage{amsmath}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+\ExamClass{ANL}
+\ExamName{Lista I}
+\ExamHead{\today}
+\author{Michał Bronikowski}
+\let\ds\displaystyle
+
+\begin{document}
+\ExamInstrBox{
+\begin{center}
+Michał Bronikowski \\
+Deklaruję zadania numer: 1,2,3,4,5,6
+\end{center}
+}
+\hfill
+\\
+\begin{enumerate}
+   \item Wiadomo, że rozwiązaniem równania kwadratowego \[ax^{2}+bx+c=0 (a\neq 0)\] są liczby:
+   
+      \begin{enumerate}
+	 \item $\frac{-b+\sqrt{b^{2}-4ac}}{2a}$
+	 \item $\frac{-b-\sqrt{b^{2}-4ac}}{2a}$
+      \end{enumerate}
+      Pokaż na kilku przykładach, że bezpośrednie stosowanie tych wzorów może być niebezpieczne.\\ 
+      \textbf{Odp}:\\
+      Rozwiązanie: \emph{zad1.rb}\\
+      Dane: \emph{zad1\_dane.txt}\\
+   \item Użyj komputera do wyznaczania wartości numerycznych kolejnych elementów ciągu ($x_{n}$).Zdefiniowanego rekurencyjnie w następujący sposób:\newline \newline
+   $x_{0} = 1$\\
+   $x_{1} = \frac{1}{5}$\\
+   $x_{n + 2} =\frac{26}{5}x_{n+1}-x_n$\newline \newline Skomentuj otrzymane wynikii. Czy są one wiarygodne?\\ 
+   Rozwiązanie:\\
+   Zastanówmy się jaki jest wzór jawny tego ciągu.\\
+   Niech \\ \\ $x_{n+2} = r^{n+2}$ \\ \\ Wtedy:\\ \newline
+   \begin{center}
+   $ r^{n+2} = \frac{26}{5}r^{n+1} - r^{n}  // :r^{n}$\newline\newline
+   $r^{2} = \frac{26}{5}r^{1} - 1 $\newline\newline
+   $r^{2} -\frac{26}{5}r^{1} + 1 = 0 $\newline\newline
+   \end{center}
+   Skorzystamy ze wzorów Viete'a:\\ \\
+   \begin{center}
+   $r_{1}+r_{2}=\frac{26}{5}$\\
+   $r_{1}\times r_{2}=1$\\  
+   \end{center}
+    Więc $r_{1} = \frac{1}{5}$ a $r_{2} = 5$.\\Przedstawmy naszą zależność rekurencyjną dla 2 i 3 elementu naszego ciągu w postaci równania:\\ \\
+    $
+    x_{2} = \frac{1}{25} = A \times (\frac{1}{5})^{2} + B \times 5^{2} \\ \\
+    x_{3} = \frac{1}{125} = A \times (\frac{1}{5})^{3} + B \times 5^{3}\\
+    $
+    Wnioskujemy z tego, że:\\ \\
+    $
+    A = 1 \\ \\
+    B = 0 \\ \\
+    $
+    Mamy więc doczynienia z ciągiem o postaci:\\ \\
+    $
+    x_{n} =(\frac{1}{5})^{n}
+    $
+    Można zauważyć, że ciąg ten jest malejący. Przejdźmy do wyznaczenia wartości tego ciągu przy użyciu komputera.\\
+    Plik:\emph{zad2.rb}\\
+   Po wypisaniu 30 pierwszych elementów tego ciągu mogę stwierdzić, że otrzymane przeze mnie wynikii nie są wiarygodne, ponieważ przekazywane                     na wyjście elementy nie są w porządku malejącym, a wręcz w pewnym momencie zaczynają rosnąć, a wykazałem, że ciąg powinien byc malejący.
+   \item Wykorzystując własności szeregów naprzemiennych, ustal ilu teoretycznie wyrazów szeregu: 
+   \begin{center}
+  \[\pi = 4\sum_{k=0}^\infty\frac{(-1)^{k}}{2k+1}\]
+   \end{center}
+   Należy użyć do obliczenia wartości $\pi$ z błędem mniejszym niż $10^{-7}$\\
+   Z kryterium \textbf{Leibniza}\\
+   Jeśli ciąg $a_{n}$ jest malejący i zbieżny do zera to szereg $\sum_{n=1}^\infty(-1)^{n}a_{n}$ jest malejący.Nasz ciąg $a_{n}$ jest postaci:
+  \[a_{k}=\frac{1}{2k+1}\]
+   \begin{enumerate}
+   \item Czy ciąg jest zbieżny
+   \[\lim_{k \rightarrow \infty}\frac{1}{2k+1} = 0\]
+   Ciąg jest więc zbieżny.
+   \item Czy ciąg jest malejący?
+   \[\frac{1}{2k+1} < \frac{1}{2k+2}\]
+   Ciąg jest malejący.
+   \end{enumerate}
+   Skoro wiem, że szereg jest zbieżny skorzystam z własności:
+   \[|S_{k+1} - S_{k}| = a_{k+1}\]
+   Zależy nam na tym, aby błąd był mniejszy od $10^{-7}$ więc:
+   \[|S_{k+1} - S_{k}| = a_{k+1} < 10^{-7}\]
+   Dalej:\\
+   \begin{center}
+   $
+   \frac{(-1)^{k}}{2k+1} <10^{-7} //\times(2k+1)  \newline
+   (-1)^k <10^{-7}\times(2k+2) \newline
+   k = 5000000 - 2 \newline 
+   k = 4999998\newline
+   $ \end{center}
+    Teraz wykonałem odpowiedni eksperyment z wykorzystaniem komputera.\\
+    Źródło: \emph{zad3.rb , testzad3.rb} \\
+    Wynika z niego, że dla k = 4999998 program nie wyznacza $\pi$ z błędem mniejszym niż $ 10^{-7} $. Bład jest mniejszy od $ 10^{-7} $ dla k = 5000000.
+  \item Wykorzystując własności szeregów naprzemiennych, sprawdź,że do obliczenia $ \ln2 $ z błedem mniejszym niż
+  $\frac{1}{2}\times 10^{-6} $ trzeba użyc ok. 2 milionów wyrazów szeregu:\\
+  \[\ln x = \sum_{k=1}^\infty(-1)^{k-1}\frac{(x-1)^k}{k}\]
+   Z kryterium \textbf{Leibniza}\\
+   Jeśli ciąg $a_{n}$ jest malejący i zbieżny do zera to szereg $\sum_{n=1}^\infty(-1)^{n}a_{n}$ jest malejący.Nasz ciąg $a_{n}$ i dla x = 2 jest postaci:
+   \[a_{k} = \frac{1}{k}\]
+    \begin{enumerate}
+   \item Czy ciąg jest zbieżny
+   \[\lim_{k \rightarrow \infty}\frac{1}{k} = 0\]
+   Ciąg jest więc zbieżny.
+   \item Czy ciąg jest malejący?
+   \[\frac{1}{k} < \frac{1}{k+1}\]
+   Ciąg jest malejący.
+   \end{enumerate}
+     Skoro wiem, że szereg jest zbieżny skorzystam z własności:
+   \[|S_{k+1} - S_{k}| = a_{k+1}\]
+    Zależy nam na tym, aby błąd był mniejszy od $\frac{1}{2}\times 10^{-6}$ więc:
+   \[|S_{k+1} - S_{k}| = a_{k+1} < \frac{1}{2}\times 10^{-6}\]
+   Dalej \\ \\ 
+   $
+   \frac{1}{k} <  \frac{1}{2}\times 10^{-6} // \times 2 \newline \newline
+   \frac{2}{k} <  10^{-6} \\ \\
+   k = 2 \times 10^{6} \\ \\
+   $
+   Dalej wykaż, że wykorzystanie prostego związku \[\ln 2 = \ln[e\times\frac{2}{e}]\] może znacznie przyśpieszyć obliczenia.
+   \\Odp:
+   \\
+   \[\ln[e\times\frac{2}{e}] = \ln e + \ln \frac{2}{e} = 1 + \ln \frac{2}{e}\]
+   Sprawdźmy teraz ilu elementów ciągu musimy użyć aby obliczyć $ \ln \frac{2}{e} $ z błędem mniejszym niż $\frac{1}{2}\times 10^{-6} $.
+   Podstawmy do naszego szeregu za x = $ \frac{2}{e}  $. Otrzymujemy:\\
+   \[\ln x = \sum_{k=1}^\infty(-1)^{k-1}\frac{(\frac{2}{e}-1)^k}{k}
+\]
+ Dalej:
+ \[a_{k} = \frac{(\frac{2}{e}-1)^k}{k}\]
+ Więc:
+ \[ \frac{(\frac{2}{e}-1)^k}{k}< \frac{1}{2}\times 10^{-6} // \times 2\]
+ \[ \frac{2(\frac{2}{e}-1)^k}{k}<10^{-6}\]
+ Jedyne sensowne wytłumaczenie jakie przychodzi mi do głowy jest takie, że w porównaniu do ciągu  $ \frac{2}{k} $ ten maleje szybciej ponieważ w liczniku mamy $  2(\frac{2}{e}-1)^k $ , które dla nieparzystych k jest ujemne.
+ \item Wykorzystując pomysł z poprzedniego zadania zaproponuj szybki algorytm do wyznaczania $ \ln $ bardzo dużych liczb.\\
+ \begin{lstlisting}[language=Ruby, caption=Algorytm do wyznacznia logarytmu naturalnego]
+def calc(x,k)
+    sum = 0 
+    for i in 1..k 
+        sum+=(((-1) ** (i-1) ) * (((x-1) ** i) / i))
+    end
+    sum
+end
+
+def ln x
+    if  x > 5
+      temp = x / Math::E 
+     return 1 + 1 + ln(temp/Math::E)
+    else
+     return 1 + calc((x / Math::E),30)
+    end 
+end
+
+\end{lstlisting}
+Opis:\\
+
+Na początku sprawdzam czy \textbf{x} jest większy od 5, aby podczas dzielenia przez \textbf{e} wynik nie był większy od 2. Następnie wyciągam z tej liczby \textbf{e} i  do wyniku dodaje \textbf{1} i rekurencyjnie wywołuję funkcję \textbf{ln} z tym co mi zostało po wyciągnięciu e. Jeżeli argument funkcji \textbf{ln} jest mniejszy równy 5 to postępuje zgodnie z pomysłem z poprzedniego zadania.\\ \\
+Test: \emph{testzad5.rb}\\
+
+\item W języku \textbf{PWO ++} funkcja \textbf{ATAN} oblicza $ \arctan$z bardzą dużą dokłądnością, ale tylko wtedy gdy $ |x| \leq 1 $. Zaproponuj algorytm wyznaczający w jęzuku  \textbf{PWO ++} $ \arctan $ z dużą dokładnością dla $ |x| > 1 $.
+ \item Wykorzystując pomysł z poprzedniego zadania zaproponuj szybki algorytm do wyznaczania $ \ln $ bardzo dużych liczb.\\
+ \begin{lstlisting}[language=Ruby, caption= Kod w Ruby]
+def ATan(x)
+    return Math.atan(x) if x.abs <= 1
+    print "Wywolano funkcja ATan z |x| > 1"
+end
+
+def FATan(x)
+    if x < 0
+        a = - (Math::PI / 2.0)
+     return a - ATan(1.0/x)
+    else
+        a = (Math::PI / 2.0)
+     return a - ATan(1.0/x)
+    end
+end
+\end{lstlisting}
+Korzystam z faktu, że gdy $ x >= 0 $ to:
+\[\arctan(x) + \arctan(\frac{x}{2}) =\frac{\pi}{2}\]
+A gdy $ x < 0 $ to:
+\[\arctan(x) + \arctan(\frac{x}{2}) =-\frac{\pi}{2}\]
+ \end{enumerate}
+\end{document}
+

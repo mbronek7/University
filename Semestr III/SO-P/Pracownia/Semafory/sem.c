@@ -21,8 +21,8 @@ void *zlodziej()
     {
       sem_wait(&uroslo);
       pthread_mutex_lock(&mutex);
-      int polityk = (rand()%2)+1; 
-      if(polityk == 1)
+      int sad = (rand()%2)+1; 
+      if(sad == 1)
       {
           if(jablko_z_A < 1)
           {

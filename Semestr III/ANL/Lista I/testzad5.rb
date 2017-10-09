@@ -18,7 +18,7 @@ class TestNaturalLogarithmFunction < Test::Unit::TestCase
         assert_equal(Math.log(5).truncate(2),ln(5).truncate(2))
         assert_equal(Math.log(10).truncate(2),ln(10).truncate(2))
         assert_equal(Math.log(90).truncate(2),ln(90).truncate(2))
-        assert_equal(Math.log(200).truncate(1),ln(200).truncate(1))
+        assert_equal(Math.log(200).truncate(2),ln(200).truncate(2))
     end
     def test_with_precision_of_5
         assert_equal(Math.log(2).truncate(5),ln(2).truncate(5))
