@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.6)  10 OCT 2017 13:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.6)  10 OCT 2017 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -782,13 +782,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--188
 AED: lastpage setting LastPage
 [5] (./lista.aux) ) 
 Here is how much of TeX's memory you used:
- 4698 strings out of 493029
- 59709 string characters out of 6136234
- 198720 words of memory out of 5000000
- 8166 multiletter control sequences out of 15000+600000
+ 4699 strings out of 493029
+ 59711 string characters out of 6136234
+ 198680 words of memory out of 5000000
+ 8167 multiletter control sequences out of 15000+600000
  12283 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,13n,45p,443b,1888s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,13n,45p,443b,1890s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{
 /usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/t
 exmf-dist/fonts/enc/dvips/pl/plme.enc}{/usr/share/texlive/texmf-dist/fonts/enc/
@@ -806,7 +806,7 @@ sr/share/texlive/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/pl/plsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/p
 l/plsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plti10.pfb>
-Output written on lista.pdf (5 pages, 105069 bytes).
+Output written on lista.pdf (5 pages, 104821 bytes).
 PDF statistics:
  86 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
