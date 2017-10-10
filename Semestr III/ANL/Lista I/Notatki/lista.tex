@@ -104,24 +104,28 @@ Deklaruję zadania numer: 1,2,3,4,5,6
    \[\lim_{k \rightarrow \infty}\frac{1}{2k+1} = 0\]
    Ciąg jest więc zbieżny.
    \item Czy ciąg jest malejący?
-   \[\frac{1}{2k+1} < \frac{1}{2k+2}\]
+   \[\frac{1}{2k+1} > \frac{1}{2k+2}\]
    Ciąg jest malejący.
    \end{enumerate}
    Skoro wiem, że szereg jest zbieżny skorzystam z własności:
-   \[|S_{k+1} - S_{k}| = a_{k+1}\]
+   \[|S_ - S_{k}| <= a_{k+1}\]
+   Cemu tak jest?\\
+   Weźmy sobie szereg naprzemienny o wyrazach kolejno równych:\\ \textbf{a1 , a2, a3, a4, a5, a6, a7, a8, a9, ...... } \\
+   Ustalmy sobie S4 = a1 + a2 +a3 +a4, S - suma całości. Wiemy, że suma od a5 do an jest albo większa albo mniejsza od zera, ponieważ wyrazy możemy pogrupować w pary (a5,a6);(a7,a8) itd. Każda z tych par w zależności od wartości a5 jest albo ujemna, albo dodatnia ciąg \[a_{k}=\frac{1}{2k+1}\] jest malejący zaczynamy od liczby ujemnej więc potem dodajemy do niej dodatnią ale w module od niej mniejszą itd. Każda z tych par jest ujemna. Możemy teraz te wyrazy pogrupować tak że zostawimy sobie a5 i resztę weźmiemy w dwójki, które w zależności od porzednich np. jak były ujemne staną się dodatnie. Wiemy natomiast, że całość ma być ujemna, więc jak do ujemnej dodamy sumę tych par ( $>$ 0 ), to otrzymamy liczbę ujemną. Z tego wynika, że:\[|S_ - S_{k}| <= a_{k+1}\]
    Zależy nam na tym, aby błąd był mniejszy od $10^{-7}$ więc:
-   \[|S_{k+1} - S_{k}| = a_{k+1} < 10^{-7}\]
+   \[|S - S_{k}| <= a_{k+1} < 10^{-7}\]
    Dalej:\\
    \begin{center}
    $
    \frac{1}{2(k+1)+1} <10^{-7} //\times(2k+1)  \newline
    1 <10^{-7}\times(2k+3) \newline
-   k = 5000000 - 3 \newline 
-   k = 4999997\newline\newline
+   k = 5000000 - 3 \newline$ 
+   $k = 4999997 + 1 //+1 bo ma byc większe od 1 a nie równe$ \newline
+   $k = 4999998  \newline\newline
    $ \end{center}
     Teraz wykonałem odpowiedni eksperyment z wykorzystaniem komputera.\\
     Źródło: \emph{zad3.rb , testzad3.rb} \\
-    Wynika z niego, że dla k = 4999997 program nie wyznacza $\pi$ z błędem mniejszym niż $ 10^{-7} $. Bład jest mniejszy od $ 10^{-7} $ dla k = 5000000.
+    Wynika z niego, że dla k = 4999998 program nie wyznacza $\pi$ z błędem mniejszym niż $ 10^{-7} $. Bład jest mniejszy od $ 10^{-7} $ dla k = 5000000.
   \item Wykorzystując własności szeregów naprzemiennych, sprawdź,że do obliczenia $ \ln2 $ z błedem mniejszym niż
   $\frac{1}{2}\times 10^{-6} $ trzeba użyc ok. 2 milionów wyrazów szeregu:\\
   \[\ln x = \sum_{k=1}^\infty(-1)^{k-1}\frac{(x-1)^k}{k}\]
@@ -137,9 +141,9 @@ Deklaruję zadania numer: 1,2,3,4,5,6
    Ciąg jest malejący.
    \end{enumerate}
      Skoro wiem, że szereg jest zbieżny skorzystam z własności:
-   \[|S_{k+1} - S_{k}| = a_{k+1}\]
+   \[|S - S_{k}| <= a_{k+1}\]
     Zależy nam na tym, aby błąd był mniejszy od $\frac{1}{2}\times 10^{-6}$ więc:
-   \[|S_{k+1} - S_{k}| = a_{k+1} < \frac{1}{2}\times 10^{-6}\]
+   \[|S - S_{k}| <= a_{k+1} < \frac{1}{2}\times 10^{-6}\]
    Dalej \\ \\ 
    $
    \frac{1}{k+1} <  \frac{1}{2}\times 10^{-6} // \times 2 \newline \newline
@@ -153,14 +157,13 @@ Deklaruję zadania numer: 1,2,3,4,5,6
    \[\ln[e\times\frac{2}{e}] = \ln e + \ln \frac{2}{e} = 1 + \ln \frac{2}{e}\]
    Sprawdźmy teraz ilu elementów ciągu musimy użyć aby obliczyć $ \ln \frac{2}{e} $ z błędem mniejszym niż $\frac{1}{2}\times 10^{-6} $.
    Podstawmy do naszego szeregu za x = $ \frac{2}{e}  $. Otrzymujemy:\\
-   \[\ln x = \sum_{k=1}^\infty(-1)^{k-1}\frac{(\frac{2}{e}-1)^k}{k}
-\]
- Dalej:
- \[a_{k} = \frac{(\frac{2}{e}-1)^k}{k}\]
- Więc:
- \[ \frac{(\frac{2}{e}-1)^k}{k}< \frac{1}{2}\times 10^{-6} // \times 2\]
- \[ \frac{2(\frac{2}{e}-1)^k}{k}<10^{-6}\]
- Jedyne sensowne wytłumaczenie jakie przychodzi mi do głowy jest takie, że w porównaniu do ciągu  $ \frac{2}{k} $ ten maleje szybciej ponieważ w liczniku mamy $  2(\frac{2}{e}-1)^k $ , które dla nieparzystych k jest ujemne.
+   \[\ln x = \sum_{k=1}^\infty(-1)^{k-1}\frac{(\frac{2}{e}-1)^k}{k}\]
+   Szereg ten nie jest naprzemienny, co trochę komplikuje całą sprawę.\\ Zaokrąglijmy więc licznik, który jest równy ok.$ -0.264241 $ do wartości równej $ \frac{1}{5} $ .Więc\\
+  \[\ln x = \sum_{k=1}^\infty(-1)^{k-1}\frac{(\frac{1}{5}^{k})}{k}\]
+  Dalej
+  Można zauważyć, że są to wartości asymptonicznie szybko malejące. Ponadto wszystkie < 0. I już różnica $ S_{11} - S_{10} $ równa jest w module $ |3.9866828560608525e-08 |$. Wiedząc, że wartości będą coraz to mniejsze, a już mamy doczynienie z liczbą praktycznie niezauważalna". Twierdzę, że do  optymalnego obliczenia ( z dość małym błędem ) sumy tego szeregu będziemy potrzebować nie więcej niż 30 jego wyrazów. ( Dalsze iteracje będą zbyt mało znaczące).
+  
+  
  \item Wykorzystując pomysł z poprzedniego zadania zaproponuj szybki algorytm do wyznaczania $ \ln $ bardzo dużych liczb.\\
  \begin{lstlisting}[language=Ruby, caption=Algorytm do wyznacznia logarytmu naturalnego]
 def calc(x,k)
@@ -190,18 +193,21 @@ Test: \emph{testzad5.rb}\\
  \begin{lstlisting}[language=Ruby, caption= Kod w Ruby]
 def ATan(x)
     return Math.atan(x) if x.abs <= 1
-    print "Wywolano funkcja ATan z |x| > 1"
+    print "Wywolano funkcje ATan z |x| > 1"
 end
 
 def FATan(x)
     if x < 0
         a = - (Math::PI / 2.0)
      return a - ATan(1.0/x)
+    elsif x == 0
+     return ATan(x)
     else
         a = (Math::PI / 2.0)
      return a - ATan(1.0/x)
     end
 end
+
 \end{lstlisting}
 Korzystam z faktu, że gdy $ x >= 0 $ to:
 \[\arctan(x) + \arctan(\frac{x}{2}) =\frac{\pi}{2}\]

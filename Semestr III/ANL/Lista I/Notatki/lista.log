@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.6)  10 OCT 2017 14:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.6)  10 OCT 2017 23:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -709,28 +709,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--94
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 113--115
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 125--127
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--150
-
- []
+LaTeX Warning: Command \k invalid in math mode on input line 123.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--153
+LaTeX Warning: Command \' invalid in math mode on input line 123.
+
+Missing character: There is no ¦ in font plmi10!
+Missing character: There is no ó in font plmi10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 153--156
+Underfull \hbox (badness 10000) in paragraph at lines 146--154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
 
  []
 
@@ -740,55 +753,55 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2015/06/04 1.6 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 169.
+(Font)              <8> on input line 172.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 169.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 169.
+(Font)              <6> on input line 172.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 172.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 169.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 175.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 172.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 178.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 175.
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 178.
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
 
  []
 
-[4] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+
+ []
+
+
 AED: lastpage setting LastPage
 [5] (./lista.aux) ) 
 Here is how much of TeX's memory you used:
  4699 strings out of 493029
  59711 string characters out of 6136234
- 198680 words of memory out of 5000000
+ 215249 words of memory out of 5000000
  8167 multiletter control sequences out of 15000+600000
  12283 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,13n,45p,443b,1890s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,13n,45p,832b,1945s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{
 /usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/t
 exmf-dist/fonts/enc/dvips/pl/plme.enc}{/usr/share/texlive/texmf-dist/fonts/enc/
@@ -806,7 +819,7 @@ sr/share/texlive/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/pl/plsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/p
 l/plsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plti10.pfb>
-Output written on lista.pdf (5 pages, 104821 bytes).
+Output written on lista.pdf (5 pages, 110241 bytes).
 PDF statistics:
  86 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
