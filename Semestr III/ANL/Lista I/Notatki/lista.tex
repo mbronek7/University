@@ -114,14 +114,14 @@ Deklaruję zadania numer: 1,2,3,4,5,6
    Dalej:\\
    \begin{center}
    $
-   \frac{(-1)^{k}}{2k+1} <10^{-7} //\times(2k+1)  \newline
-   (-1)^k <10^{-7}\times(2k+2) \newline
-   k = 5000000 - 2 \newline 
-   k = 4999998\newline
+   \frac{1}{2(k+1)+1} <10^{-7} //\times(2k+1)  \newline
+   1 <10^{-7}\times(2k+3) \newline
+   k = 5000000 - 3 \newline 
+   k = 4999997\newline\newline
    $ \end{center}
     Teraz wykonałem odpowiedni eksperyment z wykorzystaniem komputera.\\
     Źródło: \emph{zad3.rb , testzad3.rb} \\
-    Wynika z niego, że dla k = 4999998 program nie wyznacza $\pi$ z błędem mniejszym niż $ 10^{-7} $. Bład jest mniejszy od $ 10^{-7} $ dla k = 5000000.
+    Wynika z niego, że dla k = 4999997 program nie wyznacza $\pi$ z błędem mniejszym niż $ 10^{-7} $. Bład jest mniejszy od $ 10^{-7} $ dla k = 5000000.
   \item Wykorzystując własności szeregów naprzemiennych, sprawdź,że do obliczenia $ \ln2 $ z błedem mniejszym niż
   $\frac{1}{2}\times 10^{-6} $ trzeba użyc ok. 2 milionów wyrazów szeregu:\\
   \[\ln x = \sum_{k=1}^\infty(-1)^{k-1}\frac{(x-1)^k}{k}\]
@@ -142,9 +142,10 @@ Deklaruję zadania numer: 1,2,3,4,5,6
    \[|S_{k+1} - S_{k}| = a_{k+1} < \frac{1}{2}\times 10^{-6}\]
    Dalej \\ \\ 
    $
-   \frac{1}{k} <  \frac{1}{2}\times 10^{-6} // \times 2 \newline \newline
-   \frac{2}{k} <  10^{-6} \\ \\
-   k = 2 \times 10^{6} \\ \\
+   \frac{1}{k+1} <  \frac{1}{2}\times 10^{-6} // \times 2 \newline \newline
+   \frac{2}{k+1} <  10^{-6} \\ \\
+   k + 1= 2 \times 10^{6} \\ \\
+   k = 2 \times 10^{6} - 1 \\ \\
    $
    Dalej wykaż, że wykorzystanie prostego związku \[\ln 2 = \ln[e\times\frac{2}{e}]\] może znacznie przyśpieszyć obliczenia.
    \\Odp:

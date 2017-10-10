@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.6)  9 OCT 2017 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.6)  10 OCT 2017 13:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -714,108 +714,130 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--115
 
  []
 
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 121.
+
 [2]
 Underfull \hbox (badness 10000) in paragraph at lines 125--127
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--149
+Underfull \hbox (badness 10000) in paragraph at lines 142--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--152
+Underfull \hbox (badness 10000) in paragraph at lines 150--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--155
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 153.
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 153--156
 
  []
 
-[3] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2015/06/04 1.6 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 168.
+(Font)              <8> on input line 169.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 168.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 168.
+(Font)              <6> on input line 169.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 169.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 168.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 174.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 169.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 175.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 174.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 175.
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
-[4] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 191.
+
+[4]
+
+Package lastpage Warning: Rerun to get the references right on input line 212.
+
+
 AED: lastpage setting LastPage
-[5] (./lista.aux) ) 
+
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 212.
+
+[5] (./lista.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  4698 strings out of 493029
  59709 string characters out of 6136234
- 191720 words of memory out of 5000000
+ 191744 words of memory out of 5000000
  8166 multiletter control sequences out of 15000+600000
  12283 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,13n,45p,443b,1483s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{
-/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/t
-exmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/
-dvips/pl/plme.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/
-usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plsc.enc}</usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/pl/plbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/p
-l/plcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plex10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/pl/plmi5.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/pl/plmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/pl/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr5.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/p
-l/plsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/pl/plti10.pfb>
-Output written on lista.pdf (5 pages, 107831 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fonts/e
+nc/dvips/pl/plme.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plit.enc
+}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plsc.enc}{/usr/share/texlive
+/texmf-dist/fonts/enc/dvips/pl/plmi.enc}</usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/
+plbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plcsc10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/pl/plmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/pl/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl
+/plsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/pl/plti10.pfb>
+Output written on lista.pdf (5 pages, 105252 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
