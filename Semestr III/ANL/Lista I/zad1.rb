@@ -38,8 +38,8 @@ end
 def row(a,b,c)
    begin 
    delta = b*b-4*a*c 
-   x1 = (-b + Math.sqrt(delta)) / (2*a)
-   x2 = (-b - Math.sqrt(delta)) / (2*a)
+   x1 = (-b + Math.sqrt(delta)) / (2.0*a)
+   x2 = (-b - Math.sqrt(delta)) / (2.0*a)
    Rez.new(x1,x2,delta)
    rescue 
    print "delta < 0"
