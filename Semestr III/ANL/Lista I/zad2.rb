@@ -7,6 +7,7 @@ def printres x
         print "#{i} wyraz ciągu to #{x[i]}\n"
     end
 end 
+memoize(:sequence,"sequen.cache")
 def sequence n
  if n == 0
      return 1
