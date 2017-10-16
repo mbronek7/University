@@ -13,7 +13,7 @@
 #define BTN_PORT PORTD
 #define LED_DDR DDRB
 #define LED_PORT PORTB   
-
+#define SIZE 15
 int gray = 0;
 uint8_t key_lock1,key_lock2,key_lock3;
 
@@ -35,14 +35,14 @@ int main() {
              if (!key_lock2 && !(BTN_PIN & BTN2))
               {
               key_lock2=1;
-              gray = (gray==15) ? 0 : gray + 1;
+              gray = (gray==SIZE) ? 0 : gray + 1;
               LED_PORT = ((gray ^ (gray >> 1)) & LED_DDR);  
               }else if( key_lock2 && (BTN_PIN & BTN2)) key_lock2++;
               
              if (!key_lock3 && !(BTN_PIN & BTN3))
               {
               key_lock3=1;
-              gray = (gray==15) ? 0 : gray - 1;
+              gray = (gray==SIZE) ? 0 : gray - 1;
               LED_PORT = ((gray ^ (gray >> 1)) & LED_DDR);
               }else if( key_lock3 && (BTN_PIN & BTN3)) key_lock3++;
         

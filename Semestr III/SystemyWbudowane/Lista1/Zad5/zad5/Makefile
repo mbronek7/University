@@ -2,7 +2,7 @@
 PRG            = zad5
 OBJ            = zad5.o
 PROGRAMMER     = arduino
-PORT           = /dev/ttyACM1
+PORT           = /dev/ttyACM0
 MCU_TARGET     = atmega328p 
 AVRDUDE_TARGET = atmega328p
 OPTIMIZE       = -O3
