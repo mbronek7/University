@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Uwagi og\IeC {\'o}lne}{3}
+\contentsline {section}{\numberline {2}Uwagi dotycz\IeC {\k a}ce zasi\IeC {\k e}gni\IeC {\k e}tych opinii}{3}
+\contentsline {section}{\numberline {3}Uwagi dotycz\IeC {\k a}ce postawionej diagnozy}{3}
+\contentsline {section}{\numberline {4}Uwagi dotycz\IeC {\k a}ce proponowanego rozwi\IeC {\k a}zania}{3}
+\contentsline {section}{\numberline {5}Kilka s\IeC {\l }\IeC {\'o}w na zako\IeC {\'n}czenie}{4}

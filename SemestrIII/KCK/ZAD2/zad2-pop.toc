@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Opis problemu}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Andrzej Przekop}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Aleksander Pawletta}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Jakub \IeC {\'S}wist}{4}{subsection.1.3}
+\contentsline {section}{\numberline {2}Problemy jakie napotkali\IeC {\'s}my po przeanalizowaniu dzia\IeC {\l }a\IeC {\'n} naszych rozm\IeC {\'o}wc\IeC {\'o}w}{4}{section.2}
+\contentsline {section}{\numberline {3}Podsumowanie}{11}{section.3}
