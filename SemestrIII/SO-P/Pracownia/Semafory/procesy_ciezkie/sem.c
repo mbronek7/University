@@ -19,7 +19,7 @@ struct Zasob_Dzielony
     int gdzie;
 } *z_dz ;
 
-int zlodziej()
+void zlodziej()
 {   
     while(1)
     {
@@ -80,18 +80,16 @@ void rosnij()
 
 int main()
 {
-    srand(time(0)); 
     z_dz = mmap( NULL , sizeof( struct Zasob_Dzielony ) , PROT_READ | PROT_WRITE , MAP_SHARED | MAP_ANONYMOUS , -1 , 0 );
     sem_init( & z_dz->uroslo , 1 , 5 );
-    sem_init( & z_dz->skradziono , 1 , 20 );
-    z_dz->jablko_z_A = 10;
-    z_dz->jablko_z_B = 10;
-   // pid = 0;
+    sem_init( & z_dz->skradziono , 1 , 5 );
+    z_dz->jablko_z_A = 5;
+    z_dz->jablko_z_B = 5;
     pid = fork();
  
     if (pid < 0)
     {
-        perror ("error it seems that something went wrong :( \n");
+        perror ("Niestety coś się zepsuło :( \n");
         exit(1);
     } 
     else if (pid == 0)

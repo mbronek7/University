@@ -1,85 +1,239 @@
-\documentclass{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
-\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
-\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{inconsolata}
+\renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+\usepackage[T1]{fontenc}
+
+
+\usepackage{secdot}  % kropka po numerach sekcji
 \usepackage{graphicx} % Required for the inclusion of images
-\usepackage{natbib} % Required to change bibliography style to APA
-\usepackage{amsmath} % Required for some math elements 
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=25mm,
+ right=25mm,
+ top=20mm,
+ }
 
-\setlength\parindent{0pt} % Removes all indentation from paragraphs
+% Kropki w spisie tresci
+\usepackage[dotinlabels]{titletoc}
+\titlecontents{chapter}
+  [1.5em]
+  {\addvspace{\baselineskip}}
+  {\contentslabel{1.5em}\hspace*{0em}}
+  {}
+  {\titlerule*[1pc]{.}\contentspage}
 
-\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+%kod
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    basicstyle=\normal    % rozmiar
+}
+ 
+\lstset{style=mystyle}
+\renewcommand{\lstlistingname}{} %nazwa listingu
+%
+% instrukcjua jak z pliku to : \lstinputlisting[language=Ruby]{a.rb}
+%
+% jak nnormalnie to: \begin{lstlisting}[language=Ruby, caption=Ruby example]
+%  rozmiary duzy kod: \footnotesize  albo \small
+% zdjecia:
+% \begin{center}
+%  \includegraphics[width=\textwidth]{nazwazdjeciabezrozszerzenia}
+% \end{center}
+%
+% Kolory 
+% \colorlet{Fuksjowy}{RubineRed!70!} i potem \textcolor{Fuksjowy}{Lorem ipsum...}
+%
+%
+\usepackage[dvipsnames]{xcolor}
+\definecolor{Mycolor2}{HTML}{FFFFED}
+\pagecolor{Mycolor2}
+\color{RoyalBlue}
+%fuksjowy
+\colorlet{Fuksjowy}{RubineRed!70!}
 
-%\usepackage{times} % Uncomment to use the Times New Roman font
+\title{Michał Bronikowski\protect\\ \hfill \protect\\ \protect\\ Systemy Operacyjne 2017 \protect\\ problem złodzieja jabłek \protect\\  {\small{wersja oparta na wątkach} }} % Title
 
-%----------------------------------------------------------------------------------------
-%	DOCUMENT INFORMATION
-%----------------------------------------------------------------------------------------
-
-\title{Michał Bronikowski\protect \\ \hfill \newline \newline Systemy Operacyjne 2017\\ Problem złodzieja jabłek\\ } % Title
-
-%\author{Michał \textsc{Bronikowski}} % Author name
-
-\date{\today} % Date for the report
 
 \begin{document}
-
 \maketitle  % Insert the title, author and date
+\thispagestyle{empty}
+\vfill
+%© \scriptsize{Michał Bronikowski 2017}
 \newpage
 \tableofcontents
 \newpage
-%----------------------------------------------------------------------------------------
-%	OPIS 1
-%----------------------------------------------------------------------------------------
-
+\normalfont
+\large
 \section{Opis zadania}
-
 \subsection{Problem złodzieja jabłek}
-Problem został przeze mnie wymyślony na potrzeby zadania. Wzorowałem sie na klasycznym problemie synchronizacji tj. problemie producenta i konsumenta. Powiedzmy, że jesteśmy złodziejem jabłek i w naszej miejscowości są dwa sady A i B, w których w dość szybkim tępie przybywa jabłek. Kradniemy jabłḱa z sadu A lub z sadu B. W międzyczasie w sadach, dzięki działaniu właścicieli i natury jabłek przybywa. Problem polega na takim zsynchronizowaniu procesów sadów A i B oraz procesu złodzieja, żeby złodziej nie ukradł wszystkich jabłek z sadów, ponieważ to zwróciłoby uwagę właściciela i nasz złodziej mógłby mieć problemy.
+Problem został przeze mnie wymyślony na potrzeby zadania. Wzorowałem się na klasycznym problemie synchronizacji tj. problemie producenta i konsumenta.
+Powiedzmy, że jesteśmy złodziejem jabłek i w naszej miejscowości są dwa sady A i B, w których w dość szybkim tempie przybywa jabłek. Kradniemy jabłka z
+sadu A lub z sadu B. W międzyczasie w sadach, dzięki działaniu właścicieli i natury jabłek przybywa. Problem polega na takim zsynchronizowaniu procesów
+sadów A i B oraz procesu złodzieja, żeby złodziej nie ukradł wszystkich jabłek z sadów, ponieważ to zwróciłoby uwagę właściciela i nasz złodziej mógłby mieć
+problemy.
 \subsection{Rozwiązanie}
-Rozwiązanie składa się z trzech procesów. Procesu złodzieja i dwóch procesów reprezentujących sady. 
-Do synchronizacji procesów użyję semaforów. W celu zabezpieczenia dostępu do sekcjii krytycznych programu użyję Mutex'ów.
-%----------------------------------------------------------------------------------------
-%	OPIS 2
-%----------------------------------------------------------------------------------------
+W rozwiązaniu korzystam z trzech semaforów:
+\begin{itemize}
+\item[•] skradziono1
+\item[•] skradziono2
+\item[•] uroslo
+\end{itemize}
+Złodziej czeka aż w sadach przybędzie jabłek co będzie skutkowało opuszczeniem semafara \textcolor{Fuksjowy}{uroslo}. Po czym przystępują do kradzieży jabłek z losowo wybranego przez siebie sadu. Po kradzieży zwalnia się semafor \textcolor{Fuksjowy}{skradziono1} albo \textcolor{Fuksjowy}{skradziono1}, a zamyka \textcolor{Fuksjowy}{uroslo}. Po zwolnieniu semaforów \textcolor{Fuksjowy}{skradziono1} i \textcolor{Fuksjowy}{skradziono2} w sadach ponownie rusza, produkcja jabłek.W celu zabezpieczenia dostępu do sekcjii krytycznych programu użyłem Mutex'ów.
+\section{Implementacja}
+Program należy uruchamiać na komputerze pod kontrolą systemu operacyjnego Linux. Program składa się z jednego pliku źródłowego sem.c. Załączony został również Makefile pomagający skompilować program.
+\begin{lstlisting}[language=bash,caption=Skompilowanie programu poleceniem make]
+  $ make
+\end{lstlisting}
+Program uruchamiamy poleceniem:
+\begin{lstlisting}[language=bash,caption=Uruchomienie programu]
+  $ ./sem
+\end{lstlisting}
+\subsection{Struktura programu}
+Program składa się z jednego pliku źródłowego sem.c.
+W programie możemy podzielić na następujące części:\newpage
+\begin{lstlisting}[language=C,caption=Funkcja główna,basicstyle=\small]
+  int main()
+{
+    srand(time(0));              
+    pthread_attr_t attr;
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 
-\section{Opis implementacji}
-Program skłąda się z jednego pliku źródłowego \textbf{sem.c}.\\ W programie możemy wyróżnić następującą strukturę:
-\begin{center}
-\includegraphics[width=\textwidth]{main} 
-\caption{Funkcja głowna programu}
-\end{center}
+    pthread_mutex_init(&mutex, NULL);
+    sem_init(&skradziono1, 0, 5);
+    sem_init(&skradziono2, 0, 5);
+    sem_init(&uroslo, 0, 0);
+     
+    pthread_t threads[3];
+    pthread_create(&threads[0], &attr, sadA, NULL);
+    pthread_create(&threads[2], &attr, sadB, NULL);
+    pthread_create(&threads[1], &attr, zlodziej, NULL);
+    pthread_create(&threads[2], &attr, sadB, NULL);
+    pthread_join(threads[0], NULL);
+    pthread_join(threads[1], NULL);
+    pthread_join(threads[2], NULL);
 
-\begin{center}
-\includegraphics[width=\textwidth]{zlodziej} 
-\caption{Funkcja zarządzająca procesem złodzieja}
-\end{center}
+    pthread_attr_destroy(&attr);
+    pthread_mutex_destroy(&mutex);
+    sem_destroy(&skradziono1);
+    sem_destroy(&uroslo);
+    sem_destroy(&skradziono2);
 
-\begin{center}
-\includegraphics[width=\textwidth]{sadA} 
-\caption{Funkcja zarządzająca procesem sadu A}
-\end{center}
+    pthread_exit(NULL);
+    return 0;
+}
+\end{lstlisting}
 
-\begin{center}
-\includegraphics[width=\textwidth]{sadB} 
-\caption{Funkcja zarządzająca procesem sadu B}
-\end{center}
+\begin{lstlisting}[language=C,caption=Funkcja odpowiadająca za złodzieja,basicstyle=\small]
+void *zlodziej()
+{   
+    while(1)
+    {
+      sem_wait(&uroslo);
+      pthread_mutex_lock(&mutex);
+      int sad = (rand()%2)+1; 
+      if(sad == 1)
+      {
+          if(jablko_z_A < 1)
+          {
+              printf("Nie ukradne z sadu A - nie maja juz jablek\n");
+              return 0;
+          } 
+          else
+          {
+          --jablko_z_A;
+          zA++;
+          printf("Kradne jablko z sadu A mam juz %d jablek z sadu A i %d jablek z sadu B \n ",zA,zB);
+          }
+          sem_post(&skradziono2);
+      }
+      else
+      {   if(jablko_z_B < 1)
+          {
+              printf("Nie ukradne z sadu B - nie maja juz jablek\n");
+              return 0;
+          }
+          else
+          {
+          --jablko_z_B;
+          zB++;
+          printf("Kradne jablko z sadu B mam juz %d jablek z sadu A i %d jablek z sadu B \n ",zA,zB);
+          }
+          sem_post(&skradziono1);
+      }
+          pthread_mutex_unlock(&mutex);
+    }
+}
+\end{lstlisting}
 
-Na początku inicjalizuję semafory o nazwach:\textbf{ skradziono,uroslo,skradziono2 }. Inicjalizuję również mutex dający dostęp do zasobów  tylko jednemu wątkowi. Następnie tworzę 3 wątki: \textbf{sadA,sadB,zlodziej}. Procesy odpowiadające za ,,produkcję" jabłek w sadach są zwalnianie przez semafory \textbf{skradziono} i \textbf{skradziono2}. Każdy z procesów sadów informuje o tym, że zwiększyła się ilość dostępnych jabłek. Proces złodzieja losowo wybiera, z którego sadu chce ukraść jabłka, jeżeli w danym sadzie nie ma już jabłek oznacza to, że synchronizacja nie działa poprawnie i wtedy program kończy swoje działanie. Każdorazowo po kradzieży złodziej zwalnia odpowiedni semafor prrzypisany do sadu A lub sadu B. Na starcie w każdym sadzie jest dziesięć jabłek oraz wartości odpowiadających im semaforom ustawione są na pięć, a złodzieja na zero. Taki zabieg pozwala nam uniknąć sytuacji w której złodziej będzie chciał ukraść jabłka z sadu, w którym tych jabłek nie ma.
+\begin{lstlisting}[language=C,caption=Funkcja odpowiadająca za sad "B",basicstyle=\small]
+void *sadB() {
+    while (1)
+    {
+        sem_wait(&skradziono1);
+        pthread_mutex_lock(&mutex);
+        printf("Jestem z sadu  B i mam %d jabłek\n", ++jablko_z_B);
+        pthread_mutex_unlock(&mutex);
+        sem_post(&uroslo);
+    }
+}
+\end{lstlisting}
 
-\section{Testowanie}
-Program należy uruchamiać na systemie operacyjnym LINUX. Do kompilacji służy komenda: \\
-\textbf{gcc -pthread -o sem sem.c  } \\ 
-\begin{center}
-\includegraphics[width=\textwidth]{kompilacja} 
-\caption{Kompilacja}
-\end{center}
-Wersja binarna programu będzie dostępna pod nazwą \textbf{sem}, uruchamiamy poleceniem: \\
-\textbf{./sem}
-\begin{center}
-\includegraphics[width=\textwidth]{uruchomienie} 
-\caption{Uruchomienie}
-\end{center}
-Program powinien działać poprawnie ze względu na wartości startowe semaforów odpowiadających za sady. Tyle jeżeli chodzi o teorię, wykonałem jeszcze test, polegający na tym że uruchomiłem ten program w tle i przez 5h się nie zatrzymał.
+\begin{lstlisting}[language=C,caption=Funkcja odpowiadająca za sad "A",basicstyle=\small]
+void *sadA() {
+    while (1)
+    {
+        sem_wait(&skradziono2);
+        pthread_mutex_lock(&mutex);
+        printf("Jestem z sadu A i mam %d jabłek\n", ++jablko_z_A);
+        pthread_mutex_unlock(&mutex);
+        sem_post(&uroslo);
+    }
+}
+\end{lstlisting}
+
+\subsection{Jak działa program i czemu działa?}
+Na początku inicjalizuję semafory o nazwach: skradziono,uroslo,skradziono2. Inicjalizuję również mutex dający dostęp do zasobów tylko dla jednego wątku.
+Następnie tworzę trzy wątki: sadA,sadB,zlodziej. Procesy odpowiadające
+za „produkcję” jabłek w sadach są zwalnianie przez semafory skradziono i
+skradziono2. Każdy z procesów sadów informuje o tym, że zwiększyła się ilość
+dostępnych jabłek. Proces złodzieja losowo wybiera, z którego sadu chce ukraść
+jabłka, jeżeli w danym sadzie nie ma już jabłek oznacza to, że synchronizacja nie
+działa poprawnie i wtedy program kończy swoje działanie. Każdorazowo po 
+kradzieży złodziej zwalnia odpowiedni semafor przypisany do sadu A lub sadu B.
+Na starcie w każdym sadzie jest dziesięć jabłek oraz wartości odpowiadających
+im semaforom ustawione są na pięć, a złodzieja na zero. Taki zabieg pozwala
+nam uniknąć sytuacji, w której złodziej będzie chciał ukraść jabłka z sadu, w
+którym tych jabłek nie ma.
 \end{document}

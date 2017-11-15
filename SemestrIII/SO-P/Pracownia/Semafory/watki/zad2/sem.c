@@ -7,11 +7,11 @@
 #include <semaphore.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <time.h>
+#include<time.h>
 #define SIZE 500     
 
 pthread_mutex_t mutex;  
-sem_t skradziono, uroslo,skradziono2;     
+sem_t skradziono1, uroslo,skradziono2;     
 
 int jablko_z_A = 10,jablko_z_B = 10,zA,zB;         
 
@@ -49,7 +49,7 @@ void *zlodziej()
           zB++;
           printf("Kradnę jabłko z sadu B mam już %d jabłek z sadu A i %d jabłek z sadu B \n ",zA,zB);
           }
-          sem_post(&skradziono);
+          sem_post(&skradziono1);
       }
           pthread_mutex_unlock(&mutex);
     }
@@ -57,7 +57,7 @@ void *zlodziej()
 void *sadB() {
     while (1)
     {
-        sem_wait(&skradziono);
+        sem_wait(&skradziono1);
         pthread_mutex_lock(&mutex);
         printf("Jestem z sadu  B i mam %d jabłek\n", ++jablko_z_B);
         pthread_mutex_unlock(&mutex);
@@ -84,7 +84,7 @@ int main()
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 
     pthread_mutex_init(&mutex, NULL);
-    sem_init(&skradziono, 0, 5);
+    sem_init(&skradziono1, 0, 5);
     sem_init(&skradziono2, 0, 5);
     sem_init(&uroslo, 0, 0);
      
@@ -99,7 +99,7 @@ int main()
 
     pthread_attr_destroy(&attr);
     pthread_mutex_destroy(&mutex);
-    sem_destroy(&skradziono);
+    sem_destroy(&skradziono1);
     sem_destroy(&uroslo);
     sem_destroy(&skradziono2);
 
