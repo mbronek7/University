@@ -22,7 +22,7 @@ int main()
     x1 = (- b + (sqrt(b * b - 4 * a * c))) / ( 2 * a);
     x2 = (- b - (sqrt(b * b - 4 * a * c))) / ( 2 * a);
 
-    cout << "X1 ze wzorou: " << x1 << endl << "X2 ze wzoru: " << x2 << endl;
+    cout << "X1 ze wzoru: " << x1 << endl << "X2 ze wzoru: " << x2 << endl;
 
     return 0;
 }
