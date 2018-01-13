@@ -1,0 +1,91 @@
+\documentclass[fleqn]{article}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{mathexam}
+\usepackage{amsmath}
+\usepackage{graphicx} 
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+\ExamClass{MDL}
+\ExamName{Lista I}
+\ExamHead{\today}
+\author{Michał Bronikowski}
+\let\ds\displaystyle
+
+\begin{document}
+\ExamInstrBox{
+\begin{center}
+Michał Bronikowski \\
+Zadania numer: 1,2,7,8
+\end{center}
+}
+\hfill
+\\
+\\
+\\
+\\
+\\
+\\
+\[\huge \bf Zadanie \ 1\] 
+Udowodnij, że liczba funkcji różnowartościowych z $n$-elementowego zbiory $A$ w $m$ elementowy zbiór B wynosi $\frac{m!}{(m-n)!} $. \\
+\\Rozwiązanie: \\ \\
+Tworząc funkcje różnowartościowe z $A$ w $B$ na początku wybieram pierwszą wartość f-cji na $m$ sposobów drugą na $m-1$ trzecią na $m-2$ itd. W ogólności: \\ 
+\begin{center}
+$
+m(m-1)(m-2)...(m-n+1) = \frac{m!}{(m-n)!} 
+$
+\end{center}
+
+ \[\huge \bf Zadanie \ 2\] 
+Czy wśród liczb $1,2,...,10^{10}$ zapisanych w systemie dziesiętnym jest więcej tych zawierających cyfrę 9, czy tych, które jej nie zawierają?
+\newline \\
+Rozwiązanie:
+\newline \\
+Wszystkich liczb w tym przedziale jest $10^{10}$, liczb nie zawierających $9$ jest $9^{10}$. Ilość liczb zawierających $9$ jest równa: $10^{10} - 9^{10} $. Można ułożyć funkcję:$\frac{10^{10} - 9^{10}}{10^{10}}$
+która będzie określała zależność pomiędzy ilością liczb zawierających $9$, a tymi, które jej nie zawierają w tym przedziale. Można to uprościć do postaci $ 1 - (0.9)^{n} $ widać, że jest to funkcja rosnąca, ponieważ $(0.9)^{n}$ maleje dla n = 10 jest mniejsze od $0.5$ więc jest więcej tych zawierających $9$.
+ \newpage
+ \[\huge \bf Zadanie \ 7\] 
+Ile jest możliwych rejestracji samochodowych złożonych z 3 liter, po których następują 4 cyfry?
+\newline \\
+Rozwiązanie:
+\newline \\
+Załóżmy, że alfabet ma $21$ znaków (bez polskich znaków), cyfr jest $10$.
+Mamy 3 miejsca na litery więc możemy je tam wstawić na $21^{3}$ sposobów. Na cyfry mamy 4 miejsca umieszczamy je tam na $10^{4}$ sposobów.
+Ostatecznie mamy $21^{3} \cdot 10^{4} $ możliwych tablic rejestracyjnych.
+\[\huge \bf Zadanie \ 8\]
+Pokaż, że dla dowolnej liczby rzeczywiatej $x$ i dowolnej liczby całkowitej $n$ zachodzi $ \lceil x + n \rceil = \lceil x \rceil + n$.
+\newline \\
+Rozwiązanie :
+\newline \\
+$ \lceil x + n \rceil = min \{ k \in \mathbb{Z} : k \geq x + n \}$
+\\Ale wiemy, że $ n \in \mathbb{Z} $ więc, aby $k$ było $\qeq$ niż $x+n$ wystarczy zastosować funkcję $\lceil\rceil$ na $x$ i uzyskamy interesującą nas zależność.
+\end{document}
+
