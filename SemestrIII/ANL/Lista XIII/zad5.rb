@@ -48,6 +48,12 @@ class Function
   end
 
 end
-
+puts "a)"
 A = Function.new { |x| 2018 * x**5  + 2017 * x**4 - 2016 * x**3 + 2015 * x }
 A.romberg(-2,3,15)
+puts "b)"
+B = Function.new { |x| 1 / (1 + x ** 2) }
+B.romberg(-5,5,15)
+puts "c)"
+C = Function.new { |x| Math.cos(2 * x) / x }
+C.romberg(Math::PI,15,15)
