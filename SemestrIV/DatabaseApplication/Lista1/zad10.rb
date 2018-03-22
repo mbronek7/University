@@ -7,16 +7,23 @@ password = 'zaq1@WSX'
 client = TinyTds::Client.new username: username, password: password, 
     host: server, port: 1433, database: database, azure: true
 
-puts "\nZad4 \n \n"
+puts "\nZad10 \n \n"
 
 tsql = 
-
 "
-SELECT DISTINCT c.Name Category, p.Name Product
-FROM ((SalesLT.ProductCategory c
-JOIN SalesLT.ProductCategory c2 ON c.ProductCategoryID = c2.Parent
-ProductCategoryID)
-JOIN SalesLT.Product p ON c.ProductCategoryID = p.ProductCategoryID)
+CREATE TABLE  Test
+(
+ id int IDENTITY(1000,10),
+ first_name varchar (20),
+ last_name varchar (30)
+)
+
+INSERT Test
+(first_name,last_name)
+VALUES
+('Michal','Bronikowski'),
+('Czeslaw','Czapka');
+
 "
 
 result = client.execute(tsql)
