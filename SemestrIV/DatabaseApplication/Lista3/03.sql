@@ -46,15 +46,15 @@ GO
 CREATE TRIGGER insert_page
 ON Bufor
 INSTEAD OF INSERT
-AS BEGIN
-	IF (EXISTS (SELECT * FROM Bufor
+AS BEGIN                                                                                 --- strona istnieje juz w bazie
+	IF (EXISTS (SELECT * FROM Bufor                                   --- pierwszy przypadek aktualizujemy czas ostatniego wejscia
 			WHERE AdresUrl = (SELECT AdresUrl FROM inserted)))
 		UPDATE Bufor
 			SET OstatnieWejscie=(SELECT OstatnieWejscie FROM inserted)
 			WHERE AdresUrl = (SELECT AdresUrl FROM inserted);
 	ELSE
 	BEGIN
-		IF ((SELECT COUNT(*) FROM Bufor) <
+		IF ((SELECT COUNT(*) FROM Bufor) <                           --- jak ilosc wierszy jest mniejsza od cache to wstawiam
 				(SELECT Wartosc FROM Parametry WHERE Nazwa='max_cache'))
 			INSERT INTO Bufor (AdresUrl, OstatnieWejscie)
 				SELECT AdresUrl, OstatnieWejscie FROM inserted;
@@ -63,9 +63,9 @@ AS BEGIN
 			DECLARE @least_recently_visited TABLE(
 				ID INT, AdresUrl VARCHAR(256), OstatnieWejscie DATETIME2);
 			INSERT INTO @least_recently_visited
-				SELECT TOP 1 * FROM Bufor ORDER BY OstatnieWejscie ASC;
-
-			IF (EXISTS (SELECT * FROM Historia
+				SELECT TOP 1 * FROM Bufor ORDER BY OstatnieWejscie ASC;   --- znajduje strone o najstarszym wejsciu 
+ 
+			IF (EXISTS (SELECT * FROM Historia                            --- przenosze do bazy z historia i jak jest to aktualizuje tylko ostatnie wejscie
 					WHERE AdresUrl = (SELECT AdresUrl FROM @least_recently_visited)))
 				UPDATE Historia
 					SET OstatnieWejscie=(SELECT OstatnieWejscie FROM @least_recently_visited)
@@ -84,9 +84,9 @@ END
 GO
 
 INSERT INTO Bufor (AdresUrl, OstatnieWejscie) VALUES
-	('https://onet.pl', CURRENT_TIMESTAMP);
-INSERT INTO Bufor (AdresUrl, OstatnieWejscie) VALUES
 	('https://wp.pl', CURRENT_TIMESTAMP);
+INSERT INTO Bufor (AdresUrl, OstatnieWejscie) VALUES
+	('https://youtube.com', CURRENT_TIMESTAMP);
 INSERT INTO Bufor (AdresUrl, OstatnieWejscie) VALUES
 	('https://facebook.com', CURRENT_TIMESTAMP);
 GO
@@ -94,4 +94,3 @@ GO
 SELECT * FROM Bufor;
 SELECT * FROM Historia;
 GO
-	
