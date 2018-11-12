@@ -1,0 +1,43 @@
+article {
+  width: 20%;
+  text-align: center;
+  margin: auto;
+}
+
+.rel {
+  left: 100px;
+  top: 500px;
+  position: relative;
+  padding: 15px;
+  background-color: rgba(109, 56, 56, 0.671);
+  text-align: center;
+}
+
+div {
+  left: 50rem;
+}
+
+div.sta {
+  position: static;
+  padding: 9rem;
+  background-color: rgba(122, 167, 85, 0.555);
+  text-align: center;
+}
+
+.abs {
+  left: 5rem;
+  position: absolute;
+  padding: 5rem;
+  background-color: rgba(121, 104, 160, 0.568);
+  text-align: center;
+}
+
+.fix {
+  right: 3rem;
+  top: 5rem;
+  position: fixed;
+  padding: 2rem;
+  background-color: rgba(190, 122, 44, 0.562);
+  text-align: center;
+  height: 8rem;
+}

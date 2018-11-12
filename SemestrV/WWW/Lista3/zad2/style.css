@@ -1,0 +1,16 @@
+div.center {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid rgba(124, 216, 155, 0.692);
+  text-align: center;
+}
+
+div.a {
+  text-align: center;
+}
+span.center {
+  border: 2px solid rgba(84, 97, 173, 0.658);
+  text-align: center;
+  display: block;
+}

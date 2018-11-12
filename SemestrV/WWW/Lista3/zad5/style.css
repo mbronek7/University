@@ -1,0 +1,12 @@
+ul#css {
+  list-style-image: url("https://mdn.mozillademos.org/files/11981/starsolid.gif");
+}
+
+ul#before {
+  list-style-type: none;
+
+}
+
+ul#before li:before {
+  content: url("https://mdn.mozillademos.org/files/11981/starsolid.gif");
+}

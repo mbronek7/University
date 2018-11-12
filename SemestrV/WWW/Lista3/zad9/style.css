@@ -1,0 +1,34 @@
+.blur {
+  width: 300px;
+  height: auto;
+  display: inline-block;
+  position: relative;
+  transition: .6s;
+  margin: 4px;
+}
+
+.blur img {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  border-radius: 4px;
+}
+
+.blur :not(img) {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: rgba(214, 147, 47, 0.925);
+  opacity: 0;
+  transition: .5s;
+}
+
+.blur:hover img {
+  filter: blur(20px) brightness(90%);
+}
+
+.blur:hover :not(img) {
+  opacity: 1;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Zad 2</title>
+  <link rel="stylesheet" href="zad2.css">
+  <script src="zad2.js"></script>
+</head>
+
+<body>
+  <form method="post" id="form">
+    <p>Nr konta:</p>
+    <input type="text" id="numer" size="25" onblur="checkField('numer')">
+
+    <p>Pesel</p>
+    <input type="text" id="pesel" size="25" onblur="checkField('pesel')">
+
+    <p>Data urodzenia:</p>
+    <input type="date" id="date" size="25" onblur="checkField('date')">
+
+    <p>E-Mail:</p>
+    <input type="text" id="email" size="25" onblur="checkField('email')">
+
+    <input type="submit" id="submit" value="Wyslij">
+  </form>
+</body>
+
+</html>
