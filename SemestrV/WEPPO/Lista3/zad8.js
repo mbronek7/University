@@ -2,10 +2,11 @@ function* fib() {
   var f1 = 0,
     f2 = 1;
   while (true) {
-    let temp = f1;
-    f1 = f2;
-    f2 = temp + f1;
-    yield temp;
+    //let temp = f1;
+    //f1 = f2;
+    //f2 = temp + f1
+    {f1, f2} = {f1:f2, f2:f1+f2};
+    yield f1;
   }
 }
 
