@@ -1,6 +1,0 @@
-*.pyc
-*.idea
-tests/myparser.py
-stash.sqlite
-*.sqlite
-.vscode

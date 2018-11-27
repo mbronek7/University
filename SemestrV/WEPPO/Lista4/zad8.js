@@ -42,6 +42,16 @@ fs.promises.readFile("data.txt", {
     console.log('ERROR:', err);
   });
 // PO NOWEMU
+async function new3(){
+  try{
+    const text = await fs.promises.readFile("data.txt", {
+      encoding: 'utf8'
+    });
+    console.log(text);
+  } catch(err){
+    console.log('ERROR:', err);
+  }
+}
 async function new1() {
   try {
     const text = await readFileAsync("data.txt", {
@@ -64,3 +74,4 @@ async function new2() {
 }
 new1();
 new2();
+new3();
