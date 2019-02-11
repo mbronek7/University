@@ -1,0 +1,19 @@
+<h1>Users</h1>
+<hr />
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Second Name</th>
+    <th>Age</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.second_name %></td>
+      <td><%= user.age %></td>
+    </tr>
+  <% end %>
+</table>
+<hr />
+<%= paginate @users %>
+<%= page_entries_info @users %>

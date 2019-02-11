@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def rozklad(n)
   return [n] if n < 1
 
@@ -25,13 +27,11 @@ class Integer
   def divisiors
     tab = [1]
     2.upto(Math.sqrt(self).floor) do |i|
-      if (self % i).zero?
-        tab.push(i, self/i)
-      end
+      tab.push(i, self / i) if (self % i).zero?
     end
     tab.sort
   end
-  end
+end
 
 def d(n)
   n.divisiors.inject(:+)

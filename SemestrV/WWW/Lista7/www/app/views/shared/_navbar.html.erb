@@ -1,0 +1,12 @@
+<nav class="navbar navbar-inverse navbar-static-top">
+ <div class="container">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="<%= home_index_path %>">MENU</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li <%if[params[:controller], params[:action]] == ["home","index"]%> class="active" <% end %>> <%=link_to "Menu", home_index_path%></li>
+    <li <%if[params[:controller], params[:action]] == ["home","contact"]%> class="active" <% end %>> <%=link_to "Kontakt", home_contact_path%></li>
+    <li <%if[params[:controller], params[:action]] == ["home","galerry"]%> class="active" <% end %>>   <%=link_to "Galeria", home_galerry_path%></li>
+  </ul>
+ </div>
+</nav>

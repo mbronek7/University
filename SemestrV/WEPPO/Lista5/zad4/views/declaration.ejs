@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Wypełnij deklarację</title>
+</head>
+
+<body>
+  <div class="container">
+    <form method="POST">
+      <div class="form-group">
+        <h3>Imię i nazwisko:</h3>
+        <br>
+        <input class="form-control" type='text' name='name' pattern="[A-Za-zęóąśłżźćńĘÓĄŚŁŻŹĆŃ ]*" required />
+      </div>
+      <div>
+        <h3>Przedmiot:</h3>
+        <br>
+        <input class="form-control" type='text' name='lecture' required />
+      </div>
+      <div>
+        <h3>Data:</h3>
+        <br>
+        <input class="form-control" type='date' name='date' required />
+      </div>
+      <div>
+        <h3>taskania:</h3>
+        <table>
+          <tr>
+            <th>
+              <p>1</p>
+            </th>
+            <th>
+              <p>2</p>
+            </th>
+            <th>
+              <p>3</p>
+            </th>
+            <th>
+              <p>4</p>
+            </th>
+            <th>
+              <p>5</p>
+            </th>
+            <th>
+              <p>6</p>
+            </th>
+            <th>
+              <p>7</p>
+            </th>
+            <th>
+              <p>8</p>
+            </th>
+            <th>
+              <p>9</p>
+            </th>
+            <th>
+              <p>10</p>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <input type="number" name="task1" id="" min="0" class="number" value="0">
+            </th>
+            <th>
+              <input type="number" name="task2" id="" min="0" class="number" value="0">
+            </th>
+            <th>
+              <input type="number" name="task3" id="" min="0" class="number" value="0">
+            </th>
+            <th>
+              <input type="number" name="task4" id="" min="0" class="number" value="0">
+            </th>
+            <th>
+              <input type="number" name="task5" id="" min="0" class="number" value="0">
+            </th>
+            <th>
+              <input type="number" name="task6" id="" min="0" class="number" value="0">
+            </th>
+            <th>
+              <input type="number" name="task7" id="" min="0" class="number" value="0">
+            </th>
+            <th>
+              <input type="number" name="task8" id="" min="0" class="number" value="0">
+            </th>
+            <th>
+              <input type="number" name="task9" id="" min="0" class="number" value="0">
+            </th>
+            <th>
+              <input type="number" name="task10" id="" min="0" class="number" value="0">
+            </th>
+          </tr>
+        </table>
+      </div>
+      <br>
+      <div>
+        <button class="btn btn-primary">Print</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

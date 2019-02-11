@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 30%; }
+
+input.number {
+  width: 50px; }
+
+tr,
+td,
+th {
+  border: 1px solid #118bbb;
+  text-align: left;
+  padding: 8px; }
+
+tr:nth-child(even) {
+  background-color: #afafaf; }
+
+tr:nth-child(odd) > th:nth-child(even) {
+  background-color: #858585; }
+
+tr:nth-child(even) > th:nth-child(odd) {
+  background-color: #d6d6d6; }
+
+/*# sourceMappingURL=style.css.map */

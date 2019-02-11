@@ -1,0 +1,1 @@
+ HTTP ONLY - blokuje próby odczytu cookie z tą flagą przez API inne niż HTTP

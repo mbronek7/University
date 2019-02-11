@@ -1,0 +1,13 @@
+<!-- radio.ejs -->
+
+<div>
+  <h1>
+      <%= t2 %>
+  </h1>
+  <% radioList.content.forEach( bullet => { %>
+      <input type="radio" value="<%=bullet.value%>">
+      <%= bullet.text %>
+      <br>
+  <% }) %>
+
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Radio</title>
+</head>
+
+<body>
+  <h1>
+    <%= t1 %>
+  </h1>
+
+  <% var radioList = {
+            content : [
+                { value: '1', text: 'element 1'},
+                { value: '2', text: 'element 2'},
+                { value: '3', text: 'element 3'},
+                { value: '4', text: 'element 4'},
+            ]
+        } %>
+
+  <% include radio2  %>
+</body>
+
+</html>

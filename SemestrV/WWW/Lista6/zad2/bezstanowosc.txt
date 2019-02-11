@@ -1,0 +1,3 @@
+1. Bezstanowość http - każde odświeżenie strony/każde nowe zapytanie do serwera jest odbierane jako całkowicie
+   nowe zapytanie tzn. nie są przechowywane żadne wcześniejsze informacje (oczywiscie nie mówimy tutaj o sytuacji w której używamy sesji).
+   Zmiana nagłówka Accept-Language powoduje zmianę języka na stronie w zależności od kolejności wysłanego nagłówka. (screen zad1)

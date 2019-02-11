@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registration number:</strong>
+  <%= @car.registration_number %>
+</p>
+
+<p>
+  <strong>Fuel:</strong>
+  <%= @car.fuel %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @car.name %>
+</p>
+
+<p>
+  <strong>Year of production:</strong>
+  <%= @car.year_of_production %>
+</p>
+
+<p>
+  <strong>Date of first yerestration:</strong>
+  <%= @car.date_of_first_yerestration %>
+</p>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

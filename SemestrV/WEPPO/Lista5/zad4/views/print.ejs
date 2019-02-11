@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Drukuj</title>
+</head>
+
+<body>
+
+  <table>
+    <tr>
+      <th colspan="3">
+        <%= name %>
+      </th>
+      <th colspan="5">
+        <%= lecture %>
+      </th>
+      <th colspan="2">
+        <%= date %>
+      </th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <% for(var i=0; i < points.length; i++) { %>
+        <td><%= points[i] %></td>
+      <% } %>
+    </tr>
+  </table>
+  <button class="btn btn-primary" onclick="javascript:window.print()">Print</button>
+</body>
+
+</html>
