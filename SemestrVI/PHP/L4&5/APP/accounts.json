@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "email": "test@wp.pl",
+    "description": "lala lalal all",
+    "points": 12,
+    "status": "ACTIVE"
+  },
+  {
+    "id": 2,
+    "email": "test2@wp.pl",
+    "description": "blblbl bb lab la blalb la b",
+    "points": 2,
+    "status": "DISABLED"
+  }
+]
